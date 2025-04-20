@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synvestify - Financial Advisory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+          <a href="index.html">
+            <img src="logo.png" alt="Synvestify Logo" class="top-image">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tax-planning.html">Tax Planning</a></li>
+                            <li><a href="risk-profiling.html">Risk Profiling</a></li>
+                            <li><a href="insurance-planning.html">Insurance Planning</a></li>
+                            <li><a href="goal-based-planning.html">Goal-Based Planning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="investor-education.html">Investor Education</a></li>
+                    <li><a href="financial-calculator.html">Financial Calculators</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://www.ifaplanet.com/login.php" class="login-btn">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <body>
+    
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search blog topics..." onkeyup="filterBlogs()">
+      </div>
+    
+      <div class="blog-container" id="blogList">
+        <div class="blog-card">
+          <img src="images/blog1.jpg" alt="Blog Thumbnail">
+          <h2>Understanding Mutual Funds</h2>
+          <p>Get insights into how mutual funds work and why they can be a great investment option...</p>
+          <a href="blog-post1.html" class="read-more">Read More</a>
+        </div>
+    
+        <div class="blog-card">
+          <img src="images/blog2.jpg" alt="Blog Thumbnail">
+          <h2>How to Plan Your Retirement</h2>
+          <p>Learn key steps to ensure you build a solid retirement corpus early on...</p>
+          <a href="blog-post2.html" class="read-more">Read More</a>
+        </div>
+    
+        <div class="blog-card">
+          <img src="images/blog3.jpg" alt="Blog Thumbnail">
+          <h2>Tax Saving Strategies</h2>
+          <p>Maximize your returns and reduce liability with smart tax-saving investments...</p>
+          <a href="blog-post3.html" class="read-more">Read More</a>
+        </div>
+        
+        <!-- Add more blog cards here -->
+      </div>
+    
+      <script>
+        function filterBlogs() {
+          let input = document.getElementById("searchInput").value.toLowerCase();
+          let cards = document.querySelectorAll(".blog-card");
+    
+          cards.forEach(card => {
+            let title = card.querySelector("h2").textContent.toLowerCase();
+            let desc = card.querySelector("p").textContent.toLowerCase();
+    
+            if (title.includes(input) || desc.includes(input)) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+      </script>
+  <footer class="site-footer">
+    <div class="footer-container">
+        <p>&copy; 2025 Synvestify. All rights reserved.</p>
+    </div>
+</footer>  
+    
+  </body>
+    </html>

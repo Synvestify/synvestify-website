@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculators - Synvestify</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For Graphs -->
+</head>
+<script>
+    function toggleInvestmentFields() {
+        var investmentType = document.getElementById("investmentType").value;
+        var sipFields = document.getElementById("sipFields");
+        var lumpsumFields = document.getElementById("lumpsumFields");
+    
+        if (investmentType === "sip") {
+            sipFields.style.display = "block";
+            lumpsumFields.style.display = "none";
+        } else {
+            sipFields.style.display = "none";
+            lumpsumFields.style.display = "block";
+        }
+    }
+    </script>
+    
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Synvestify Logo" class="top-image">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tax-planning.html">Tax Planning</a></li>
+                            <li><a href="risk-profiling.html">Risk Profiling</a></li>
+                            <li><a href="insurance-planning.html">Insurance Planning</a></li>
+                            <li><a href="goal-based-planning.html">Goal-Based Planning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="investor-education.html">Investor Education</a></li>
+                    <li><a href="financial-calculator.html">Financial Calculators</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://www.ifaplanet.com/login.php" class="login-btn">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="calculator-container">
+            
+        <div class="calculator-grid">
+    
+            <!-- Investment Calculator (SIP & Lumpsum) -->
+            <div class="calculator-card">
+                <h2>Investment Calculator</h2>
+                
+                <label>Select Calculation Type:</label>
+                <select id="investmentType" onchange="toggleInvestmentFields()">
+                    <option value="sip">SIP (Systematic Investment Plan)</option>
+                    <option value="lumpsum">Lumpsum Investment</option>
+                </select>
+    
+                <div id="sipFields">
+                    <label>Monthly Investment (₹):</label>
+                    <input type="number" id="sipAmount" placeholder="Enter SIP amount" required>
+    
+                    <label>Annual Return Rate (%):</label>
+                    <input type="number" id="sipRate" placeholder="Expected return" required>
+    
+                    <label>Investment Duration (Years):</label>
+                    <input type="number" id="sipYears" placeholder="Enter years" required>
+    
+                    <button onclick="calculateSIP()">Calculate</button>
+                </div>
+    
+                <div id="lumpsumFields" style="display: none;">
+                    <label>Initial Investment (₹):</label>
+                    <input type="number" id="lumpsumAmount" placeholder="Enter amount" required>
+    
+                    <label>Annual Return Rate (%):</label>
+                    <input type="number" id="lumpsumRate" placeholder="Expected return" required>
+    
+                    <label>Investment Duration (Years):</label>
+                    <input type="number" id="lumpsumYears" placeholder="Enter years" required>
+    
+                    <button onclick="calculateLumpsum()">Calculate</button>
+                </div>
+    
+                <p id="investmentResult"></p>
+            </div>
+    
+            <!-- Retirement Calculator -->
+            
+            <div class="calculator-card retirement">
+                <h2>Retirement Calculator</h2>
+                <label>Current Age:</label>
+                <input type="number" id="currentAge" placeholder="Enter your age" required>
+            
+                <label>Retirement Age:</label>
+                <input type="number" id="retirementAge" placeholder="Enter desired retirement age" required>
+            
+                <label>Monthly Savings (₹):</label>
+                <input type="number" id="monthlySavings" placeholder="Enter savings amount" required>
+            
+                <button onclick="calculateRetirement()">Calculate</button>
+                <p id="retirementResult"></p>
+            </div>
+            
+            <!-- Loan EMI Calculator -->
+            <div class="calculator-card loan-emi">
+                <h2>Loan EMI Calculator</h2>
+                <label>Loan Amount (₹):</label>
+                <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+            
+                <label>Annual Interest Rate (%):</label>
+                <input type="number" id="loanRate" placeholder="Interest rate" required>
+            
+                <label>Loan Tenure (Years):</label>
+                <input type="number" id="loanYears" placeholder="Enter years" required>
+            
+                <button onclick="calculateEMI()">Calculate</button>
+                <p id="emiResult"></p>
+            </div>
+    
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Synvestify. All rights reserved.</p>
+        </div>
+    </footer>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Profiling - Synvestify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Synvestify Logo" class="top-image">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Our Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tax-planning.html">Tax Planning</a></li>
+                            <li><a href="risk-profiling.html">Risk Profiling</a></li>
+                            <li><a href="insurance-planning.html">Insurance Planning</a></li>
+                            <li><a href="goal-based-planning.html">Goal-Based Planning</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="investor-education.html">Investor Education</a></li>
+                    <li><a href="financial-calculator.html">Financial Calculators</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://www.ifaplanet.com/login.php" class="login-btn">Log In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+                
+    <section class="content">
+        <h1>Risk Profiling</h1>
+        <div class="risk-form-container">
+            <h2>Know Your Risk Profile</h2>
+            <form id="riskForm">
+              
+              <div class="form-group">
+                <label for="age">1. What is your age group?</label>
+                <select id="age" name="age" required>
+                  <option value="">Select</option>
+                  <option value="below30">Below 30</option>
+                  <option value="30to45">30 - 45</option>
+                  <option value="above45">Above 45</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="income">2. What is your annual income?</label>
+                <select id="income" name="income" required>
+                  <option value="">Select</option>
+                  <option value="below5">Below ₹5 Lakhs</option>
+                  <option value="5to15">₹5 - ₹15 Lakhs</option>
+                  <option value="above15">Above ₹15 Lakhs</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="savings">3. What portion of your income do you save/invest?</label>
+                <select id="savings" name="savings" required>
+                  <option value="">Select</option>
+                  <option value="less10">Less than 10%</option>
+                  <option value="10to25">10% - 25%</option>
+                  <option value="more25">More than 25%</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="investmentHorizon">4. What is your investment horizon?</label>
+                <select id="investmentHorizon" name="investmentHorizon" required>
+                  <option value="">Select</option>
+                  <option value="short">Less than 3 years</option>
+                  <option value="medium">3 - 7 years</option>
+                  <option value="long">More than 7 years</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="riskTolerance">5. How do you feel about market volatility?</label>
+                <select id="riskTolerance" name="riskTolerance" required>
+                  <option value="">Select</option>
+                  <option value="low">I prefer stability</option>
+                  <option value="moderate">I can handle some ups and downs</option>
+                  <option value="high">I’m fine with high risk for better returns</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="knowledge">6. How would you rate your knowledge of financial products?</label>
+                <select id="knowledge" name="knowledge" required>
+                  <option value="">Select</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="expert">Expert</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <label for="reaction">7. What would you do if your investment drops 20% in a year?</label>
+                <select id="reaction" name="reaction" required>
+                  <option value="">Select</option>
+                  <option value="sell">Sell immediately</option>
+                  <option value="hold">Hold and wait for recovery</option>
+                  <option value="buy">Buy more at lower price</option>
+                </select>
+              </div>
+          
+              <button type="submit">Submit</button>
+              <p id="riskResult"></p>
+            </form>
+          </div>
+                
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+          <p>&copy; 2025 Synvestify. All rights reserved.</p>
+      </div>
+  </footer>
+</body>
+</html>
+<script>
+    document.getElementById("riskForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+    
+      // Scoring system: Low = 1, Medium = 2, High = 3
+      let score = 0;
+    
+      const responses = {
+        age: document.getElementById("age").value,
+        income: document.getElementById("income").value,
+        savings: document.getElementById("savings").value,
+        investmentHorizon: document.getElementById("investmentHorizon").value,
+        riskTolerance: document.getElementById("riskTolerance").value,
+        knowledge: document.getElementById("knowledge").value,
+        reaction: document.getElementById("reaction").value
+      };
+    
+      // Assign scores based on choices
+      const scoreMap = {
+        age: {
+          below30: 3,
+          "30to45": 2,
+          above45: 1
+        },
+        income: {
+          below5: 1,
+          "5to15": 2,
+          above15: 3
+        },
+        savings: {
+          less10: 1,
+          "10to25": 2,
+          more25: 3
+        },
+        investmentHorizon: {
+          short: 1,
+          medium: 2,
+          long: 3
+        },
+        riskTolerance: {
+          low: 1,
+          moderate: 2,
+          high: 3
+        },
+        knowledge: {
+          beginner: 1,
+          intermediate: 2,
+          expert: 3
+        },
+        reaction: {
+          sell: 1,
+          hold: 2,
+          buy: 3
+        }
+      };
+    
+      for (const question in responses) {
+        score += scoreMap[question][responses[question]];
+      }
+    
+      let profile = "";
+      if (score <= 10) {
+        profile = "Conservative";
+      } else if (score <= 16) {
+        profile = "Moderate";
+      } else {
+        profile = "Aggressive";
+      }
+    
+      document.getElementById("riskResult").textContent =
+        `Your Investment Risk Profile: ${profile}`;
+    });
+    </script>
+  
