@@ -32,7 +32,6 @@
         }
     }
     </script>
-    
 
 <body>
 
@@ -107,21 +106,23 @@
     
             <!-- Retirement Calculator -->
             
-            <div class="calculator-card retirement">
-                <h2>Retirement Calculator</h2>
-                <label>Current Age:</label>
-                <input type="number" id="currentAge" placeholder="Enter your age" required>
-            
-                <label>Retirement Age:</label>
-                <input type="number" id="retirementAge" placeholder="Enter desired retirement age" required>
-            
-                <label>Monthly Savings (₹):</label>
-                <input type="number" id="monthlySavings" placeholder="Enter savings amount" required>
-            
-                <button onclick="calculateRetirement()">Calculate</button>
-                <p id="retirementResult"></p>
-            </div>
-            
+            <!-- Retirement Calculator -->
+                <div class="calculator-card retirement">
+                    <h2>Retirement Calculator</h2>
+
+                    <label>Current Age:</label>
+                    <input type="number" id="currentAge" placeholder="Enter your age" required>
+
+                    <label>Retirement Age:</label>
+                    <input type="number" id="retirementAge" placeholder="Enter desired retirement age" required>
+
+                    <label>Monthly Expenses (₹):</label>
+                    <input type="number" id="monthlyExpenses" placeholder="Enter monthly expenses" required>
+
+                    <button onclick="calculateRetirementCorpus()">Calculate</button>
+                    <p id="retirementResult"></p>
+                </div>
+
             <!-- Loan EMI Calculator -->
             <div class="calculator-card loan-emi">
                 <h2>Loan EMI Calculator</h2>
@@ -146,3 +147,7 @@
             <p>&copy; 2025 Synvestify. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

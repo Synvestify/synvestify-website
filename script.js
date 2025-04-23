@@ -155,13 +155,30 @@ function calculateLumpsum() {
     document.getElementById("investmentResult").innerText = `Future Value: ₹${futureValue.toFixed(2)}`;
 }
 
-function calculateRetirement() {
-    let savings = parseFloat(document.getElementById("retirementSavings").value);
-    let rate = parseFloat(document.getElementById("retirementRate").value) / 100 / 12;
-    let months = parseInt(document.getElementById("retirementYears").value) * 12;
+function calculateRetirementCorpus() {
+    let currentAge = parseInt(document.getElementById("currentAge").value);
+    let retirementAge = parseInt(document.getElementById("retirementAge").value);
+    let monthlyExpense = parseFloat(document.getElementById("monthlyExpenses").value);
 
-    let futureValue = savings * (((Math.pow(1 + rate, months) - 1) / rate) * (1 + rate));
-    document.getElementById("retirementResult").innerText = `Retirement Corpus: ₹${futureValue.toFixed(2)}`;
+    const lifeExpectancy = 85;
+    const inflationRate = 6; // % per year
+    const postRetirementReturn = 8; // % per year
+
+    let yearsToRetirement = retirementAge - currentAge;
+    let retirementYears = lifeExpectancy - retirementAge;
+
+    // Adjust monthly expenses for inflation
+    let inflatedExpense = monthlyExpense * Math.pow(1 + inflationRate / 100, yearsToRetirement);
+
+    // Convert annual return to monthly return
+    let monthlyRate = postRetirementReturn / 100 / 12;
+    let totalMonths = retirementYears * 12;
+
+    // Present Value of an annuity (to maintain monthly income for retirementYears)
+    let corpus = inflatedExpense * ((1 - Math.pow(1 + monthlyRate, -totalMonths)) / monthlyRate);
+
+    document.getElementById("retirementResult").innerText = 
+        `Required Retirement Corpus: ₹${corpus.toFixed(2)}`;
 }
 
 function calculateEMI() {
