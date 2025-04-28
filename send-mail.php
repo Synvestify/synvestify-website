@@ -1,28 +1,22 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "support@synvestify.in"; // Your support email
-    $subject = "New Contact Form Submission - Synvestify";
-    
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $mobile = htmlspecialchars($_POST['mobile']);
     $category = htmlspecialchars($_POST['category']);
     $message = htmlspecialchars($_POST['message']);
-    
-    $body = "You have received a new contact form submission:\n\n";
-    $body .= "Name: $name\n";
-    $body .= "Email: $email\n";
-    $body .= "Mobile: $mobile\n";
-    $body .= "Category: $category\n";
-    $body .= "Message:\n$message\n";
-    
-    $headers = "From: no-reply@synvestify.in\r\n";
-    $headers .= "Reply-To: $email\r\n";
+
+    $to = "support@synvestify.in";
+    $subject = "New Contact Form Submission";
+    $body = "Name: $name\nEmail: $email\nMobile: $mobile\nCategory: $category\nMessage: $message";
+    $headers = "From: $email" . "\r\n" .
+               "Reply-To: $email" . "\r\n" .
+               "X-Mailer: PHP/" . phpversion();
 
     if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Thank you for contacting us. We will get back to you soon.'); window.location.href='contact.html';</script>";
+        echo "Message sent successfully!";
     } else {
-        echo "<script>alert('Message sending failed. Please try again later.'); window.location.href='contact.html';</script>";
+        echo "Message sending failed.";
     }
 }
 ?>
