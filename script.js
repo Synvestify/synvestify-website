@@ -90,8 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contactForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Stop form from submitting
-        
         let email = document.getElementById("email").value.trim();
         let mobile = document.getElementById("mobile").value.trim();
         let errorMessage = document.getElementById("error-message");
@@ -103,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Mobile number validation (must be exactly 10 digits, starting with 6-9)
         let mobilePattern = /^[6-9][0-9]{9}$/;
         if (!mobilePattern.test(mobile)) {
+            event.preventDefault(); // Only prevent if validation fails
             errorMessage.textContent = "❌ Please enter a valid 10-digit mobile number (starting with 6-9).";
             return;
         }
@@ -115,13 +114,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let emailMatch = email.match(emailPattern);
 
         if (!emailMatch || !allowedDomains.includes(emailMatch[1])) {
-            errorMessage.textContent = `❌ Please enter an email from genuine domains`;
+            event.preventDefault(); // Only prevent if validation fails
+            errorMessage.textContent = "❌ Please enter an email from genuine domains.";
             return;
         }
 
-        // If validation passes, show success message
-        successMessage.textContent = "✅ Form submitted successfully!";
-        this.reset(); // Clear form after submission
+        // ✅ Validation passed — allow form to submit to Formspree.
+        successMessage.textContent = "✅ Form submitted successfully!"; // This may or may not be seen because page will redirect after submission.
     });
 });
 
