@@ -1,11 +1,62 @@
 /* General Reset */
+/* Hide nav links and show hamburger on small screens */
+/* Reset & Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
+  }
+  
+  /* Mobile Styles (up to 768px) */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .hamburger {
+      display: block; /* ✅ Show hamburger on mobile */
+      cursor: pointer;
+      font-size: 24px;
+      padding: 10px;
+      color: white;
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    .nav-menu li {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Desktop Styles (769px and up) */
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none; /* ✅ Hide hamburger on desktop */
+    }
+  
+    .nav-menu {
+      display: flex !important; /* ✅ Always show nav on desktop */
+      flex-direction: row;
+      gap: 20px;
+    }
+  
+    header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+    
 /* Body Styling */
 body {
     background-color: #f9f9f9;

@@ -1,4 +1,16 @@
 // JavaScript to add interactivity
+
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+  
+    if (hamburger && navMenu) {
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  });
+  
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("learnMoreBtn").addEventListener("click", function() {
         alert("Thank you for your interest! We will add more details soon.");
