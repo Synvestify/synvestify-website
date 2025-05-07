@@ -8,54 +8,72 @@
     font-family: 'Poppins', sans-serif;
   }
   
-  /* Mobile Styles (up to 768px) */
-  @media (max-width: 768px) {
+/* Mobile Styles (up to 768px) */
+@media (max-width: 768px) {
     header {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
+    /* Hamburger Menu */
     .hamburger {
-      display: block; /* ✅ Show hamburger on mobile */
-      cursor: pointer;
-      font-size: 24px;
-      padding: 10px;
-      color: white;
+        display: block; /* Show hamburger on mobile */
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+        color: white;
     }
-  
+
+    /* Navigation Menu */
     .nav-menu {
-      display: none;
-      flex-direction: column;
-      width: 100%;
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        width: 100%;
+        list-style: none;
+        padding: 0;
     }
-  
+
     .nav-menu.active {
-      display: flex;
+        display: flex; /* Show the menu when 'active' is added */
     }
-  
+
+    /* Navigation Items */
     .nav-menu li {
-      margin: 10px 0;
+        margin: 10px 0;
+        text-align: center; /* Center align the items */
     }
-  }
-  
-  /* Desktop Styles (769px and up) */
-  @media (min-width: 769px) {
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.2em;
+        padding: 10px;
+        display: block; /* Make the links block-level for easier clicking */
+    }
+
+    .nav-menu li a:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Highlight on hover */
+    }
+}
+
+/* Desktop Styles (769px and up) */
+@media (min-width: 769px) {
     .hamburger {
-      display: none; /* ✅ Hide hamburger on desktop */
+        display: none; /* Hide hamburger on desktop */
     }
-  
+
     .nav-menu {
-      display: flex !important; /* ✅ Always show nav on desktop */
-      flex-direction: row;
-      gap: 20px;
+        display: flex; /* Always show nav on desktop */
+        flex-direction: row;
+        gap: 20px;
     }
-  
+
     header {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
-  }
+}
     
 /* Body Styling */
 body {
