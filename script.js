@@ -1,13 +1,93 @@
+// Function to load common header
+async function loadHeader() {
+    try {
+        const response = await fetch('header.html');
+        const headerHTML = await response.text();
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        if (headerPlaceholder) {
+            headerPlaceholder.innerHTML = headerHTML;
+        }
+    } catch (error) {
+        console.error('Error loading header:', error);
+    }
+}
+
 // Wait for DOM to load once, then run everything
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Hamburger menu toggle
-    const hamburger = document.querySelector('.hamburger');  // This is the hamburger icon.
-    const navMenu = document.querySelector('.nav-menu');  // This is the navigation menu.
+    // Load common header first
+    loadHeader().then(() => {
+        // Initialize navigation after header is loaded
+        initializeNavigation();
+    });
+
+});
+
+// Function to initialize navigation functionality
+function initializeNavigation() {
+    // 1. Hamburger menu toggle - Enhanced for mobile responsiveness
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');  // Toggle the 'active' class to show/hide the menu.
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') ? '✕' : '&#9776;';
+            
+            // Force display state for mobile
+            if (window.innerWidth <= 768) {
+                if (navMenu.classList.contains('active')) {
+                    navMenu.style.display = 'flex';
+                } else {
+                    navMenu.style.display = 'none';
+                }
+            }
         });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '&#9776;';
+                
+                // Force hide menu on mobile
+                if (window.innerWidth <= 768) {
+                    navMenu.style.display = 'none';
+                    
+                    // Reset dropdown icon state
+                    if (dropdownContainer) {
+                        dropdownContainer.classList.remove('active');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Close menu when clicking on nav links (mobile) - but only for actual navigation links
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Only close menu on mobile and for actual navigation links
+                if (window.innerWidth <= 768 && link.getAttribute('href') !== '#') {
+                    navMenu.classList.remove('active');
+                    hamburger.innerHTML = '&#9776;';
+                    navMenu.style.display = 'none';
+                    
+                    // Reset dropdown icon state when navigating
+                    if (dropdownContainer) {
+                        dropdownContainer.classList.remove('active');
+                        if (dropdownMenu) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Handle window resize - moved to global resize handler below
     }
 
     // 2. Learn More alert
@@ -145,14 +225,72 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 7. Dropdown link fix
+    // 7. Dropdown link fix and mobile dropdown toggle
     document.querySelectorAll('.dropdown-menu a').forEach(link => {
         link.addEventListener('click', function (event) {
             window.location.href = this.href;
         });
     });
+    
+    // Mobile dropdown toggle for "Our Services" - only on mobile
+    const dropdown = document.querySelector('.dropdown > a');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdownContainer = document.querySelector('.dropdown');
+    if (dropdown && dropdownMenu && dropdownContainer) {
+        dropdown.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                // Toggle dropdown visibility in mobile
+                const isVisible = dropdownMenu.style.display === 'block';
+                dropdownMenu.style.display = isVisible ? 'none' : 'block';
+                
+                // Toggle active class for icon rotation
+                if (isVisible) {
+                    dropdownContainer.classList.remove('active');
+                } else {
+                    dropdownContainer.classList.add('active');
+                }
+            }
+        });
+    }
+    
+    // Reset dropdown and menu states on window resize
+    window.addEventListener('resize', function() {
+        if (navMenu && hamburger) {
+            if (window.innerWidth > 768) {
+                // Reset mobile menu when switching to desktop
+                navMenu.classList.remove('active');
+                navMenu.style.display = '';
+                hamburger.innerHTML = '&#9776;';
+                
+                // Reset dropdown to default desktop behavior
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = '';
+                }
+                
+                // Reset dropdown icon state
+                if (dropdownContainer) {
+                    dropdownContainer.classList.remove('active');
+                }
+            } else {
+                // On mobile, make sure menu is hidden by default
+                if (!navMenu.classList.contains('active')) {
+                    navMenu.style.display = 'none';
+                }
+            }
+        }
+    });
 
-});
+    // Initialize proper state on page load
+    if (window.innerWidth <= 768) {
+        if (navMenu && !navMenu.classList.contains('active')) {
+            navMenu.style.display = 'none';
+                 }
+     }
+}
+
+// Calculator functions remain outside for global access
 
 // 8. Other calculator functions (remain outside DOMContentLoaded so they can be called anytime)
 function toggleInvestmentFields() {
