@@ -53,6 +53,18 @@
     });
     </script>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM loaded, firing Mixpanel test");
+
+  mixpanel.track("PAGE_OPEN_TEST", {
+    page: window.location.pathname,
+    domain: window.location.hostname,
+    ts: new Date().toISOString()
+  });
+});
+</script>
+
 
 <body>
 
