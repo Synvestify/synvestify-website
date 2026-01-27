@@ -54,15 +54,22 @@
     });
   </script>
 
-  <!-- Amplitude (Browser SDK via UNPKG) -->
-<script src="https://unpkg.com/@amplitude/analytics-browser/dist/analytics-browser.umd.min.js"></script>
+<!-- Amplitude (Official Web SDK v2) -->
 <script>
-  window.amplitude.init("813829bf075b088eb34b2ba3f4bdfc23", {
-    defaultTracking: {
-      sessions: true,
-      pageViews: false
-    }
-  });
+  (function () {
+    var script = document.createElement("script");
+    script.src = "https://cdn.amplitude.com/libs/analytics-browser-2.0.0-min.js";
+    script.onload = function () {
+      amplitude.init(
+        "e728ba3d5aca495f15e47d1d905f0dcd",
+        {
+          fetchRemoteConfig: true,
+          autocapture: false
+        }
+      );
+    };
+    document.head.appendChild(script);
+  })();
 </script>
 </head>
 
