@@ -54,16 +54,16 @@
     });
   </script>
 
-  <!-- ================= AMPLITUDE ================= -->
-  <script src="https://cdn.jsdelivr.net/npm/@amplitude/analytics-browser@latest/dist/analytics-browser.umd.min.js"></script>
+  <!-- Amplitude (Browser SDK via UNPKG) -->
+<script src="https://unpkg.com/@amplitude/analytics-browser/dist/analytics-browser.umd.min.js"></script>
 <script>
-    amplitude.init("813829bf075b088eb34b2ba3f4bdfc23", {
-      defaultTracking: {
-        sessions: true,
-        pageViews: false
-      }
-    });
-  </script>
+  window.amplitude.init("813829bf075b088eb34b2ba3f4bdfc23", {
+    defaultTracking: {
+      sessions: true,
+      pageViews: false
+    }
+  });
+</script>
 </head>
 
 <body>
