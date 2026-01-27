@@ -2,151 +2,172 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synvestify - Financial Advisory</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synvestify - Financial Advisory</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RPKB2CRJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-D0RPKB2CRJ');
-    </script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 
-    <!-- Mixpanel -->
-    <script>
-    (function(f,b){
-      if(!b.__SV){
-        var e,g,i,h;window.mixpanel=b;b._i=[];
-        b.init=function(e,f,c){
-          function g(a,d){
-            var b=d.split(".");
-            2==b.length&&(a=a[b[0]],d=b[1]);
-            a[d]=function(){
-              a.push([d].concat(Array.prototype.slice.call(arguments,0)))
+  <!-- ================= GOOGLE ANALYTICS ================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RPKB2CRJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-D0RPKB2CRJ");
+  </script>
+
+  <!-- ================= MIXPANEL ================= -->
+  <script>
+    (function (f, b) {
+      if (!b.__SV) {
+        var e, g, i, h; window.mixpanel = b; b._i = [];
+        b.init = function (e, f, c) {
+          function g(a, d) {
+            var b = d.split(".");
+            2 == b.length && (a = a[b[0]], d = b[1]);
+            a[d] = function () {
+              a.push([d].concat(Array.prototype.slice.call(arguments, 0)))
             }
           }
-          var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";
-          a.people=a.people||[];
-          a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};
-          a.people.toString=function(){return a.toString(1)+".people (stub)"};
-          i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-          for(h=0;h<i.length;h++)g(a,i[h]);
-          b._i.push([e,f,c])
+          var a = b; "undefined" !== typeof c ? a = b[c] = [] : c = "mixpanel";
+          a.people = a.people || [];
+          a.toString = function (a) {
+            var d = "mixpanel"; "mixpanel" !== c && (d += "." + c);
+            a || (d += " (stub)"); return d
+          };
+          a.people.toString = function () { return a.toString(1) + ".people (stub)" };
+          i = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+          for (h = 0; h < i.length; h++) g(a, i[h]);
+          b._i.push([e, f, c])
         };
-        b.__SV=1.2;
-        e=f.createElement("script");
-        e.type="text/javascript";
-        e.async=!0;
-        e.src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
-        g=f.getElementsByTagName("script")[0];
-        g.parentNode.insertBefore(e,g)
+        b.__SV = 1.2;
+        e = f.createElement("script"); e.type = "text/javascript"; e.async = !0;
+        e.src = "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+        g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g)
       }
-    })(document,window.mixpanel||[]);
+    })(document, window.mixpanel || []);
 
     mixpanel.init("a23315f00db559a719782a1484ac00b8", {
-        persistence: "localStorage"
+      persistence: "localStorage"
     });
-    </script>
+  </script>
+
+  <!-- ================= AMPLITUDE ================= -->
+  <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js"></script>
+  <script>
+    amplitude.init("813829bf075b088eb34b2ba3f4bdfc23_KEY", {
+      defaultTracking: {
+        sessions: true,
+        pageViews: false
+      }
+    });
+  </script>
 </head>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded, firing Mixpanel test");
-
-  mixpanel.track("PAGE_OPEN_TEST", {
-    page: window.location.pathname,
-    domain: window.location.hostname,
-    ts: new Date().toISOString()
-  });
-});
-</script>
-
 
 <body>
 
-    <!-- Header Section - Loaded from header.html -->
-    <div id="header-placeholder"></div>
+  <!-- ================= HEADER ================= -->
+  <div id="header-placeholder"></div>
 
-    <!-- Slider -->
-    <div class="slider-container">
-        <img src="image 1.jpeg" class="slide active" alt="Slide 1">
-        <img src="image 2.jpeg" class="slide" alt="Slide 2">
-        <img src="image 3.jpg" class="slide" alt="Slide 3">
-        <img src="image 4.jpg" class="slide" alt="Slide 4">
+  <!-- ================= SLIDER ================= -->
+  <div class="slider-container">
+    <img src="image 1.jpeg" class="slide active" alt="Slide 1" />
+    <img src="image 2.jpeg" class="slide" alt="Slide 2" />
+    <img src="image 3.jpg" class="slide" alt="Slide 3" />
+    <img src="image 4.jpg" class="slide" alt="Slide 4" />
+  </div>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats-section">
+    <div class="counters">
+      <div class="counter-item">
+        <span class="counter" data-target="100"></span><span class="plus">+</span>
+        <p>Happy Clients</p>
+      </div>
+      <div class="counter-item">
+        <span class="counter" data-target="50000000"></span><span class="plus">+</span>
+        <p>Total AUM (₹)</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Stats -->
-    <section class="stats-section">
-        <div class="counters">
-            <div class="counter-item">
-                <span class="counter" data-target="100"></span><span class="plus">+</span>
-                <p>Happy Clients</p>
-            </div>
-            <div class="counter-item">
-                <span class="counter" data-target="50000000"></span><span class="plus">+</span>
-                <p>Total AUM (₹)</p>
-            </div>
-        </div>
-    </section>
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; 2025 Synvestify. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <p>&copy; 2025 Synvestify. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- ================= ANALYTICS EVENTS ================= -->
+  <script>
+    /* -------- PAGE VIEW -------- */
+    mixpanel.track("Page Viewed", {
+      page_name: "Home",
+      page_url: window.location.pathname
+    });
 
-    <!-- Mixpanel Events -->
-    <script>
-        // Page View
-        mixpanel.track("Page Viewed", {
-            page_name: "Home",
-            page_url: window.location.pathname
+    amplitude.track("Page Viewed", {
+      page_name: "Home",
+      page_url: window.location.pathname,
+      domain: window.location.hostname
+    });
+
+    /* -------- SLIDER VIEWED -------- */
+    let sliderTracked = false;
+    const slider = document.querySelector(".slider-container");
+
+    if (slider) {
+      const sliderObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !sliderTracked) {
+
+            mixpanel.track("Slider Viewed", {
+              section: "Hero Slider"
+            });
+
+            amplitude.track("Slider Viewed", {
+              section: "Hero Slider",
+              page: "Home"
+            });
+
+            sliderTracked = true;
+          }
         });
+      }, { threshold: 0.5 });
 
-        // Slider Viewed
-        let sliderTracked = false;
-        const slider = document.querySelector('.slider-container');
+      sliderObserver.observe(slider);
+    }
 
-        if (slider) {
-            const sliderObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !sliderTracked) {
-                        mixpanel.track("Slider Viewed", {
-                            section: "Hero Slider"
-                        });
-                        sliderTracked = true;
-                    }
-                });
-            }, { threshold: 0.5 });
+    /* -------- STATS VIEWED -------- */
+    let statsTracked = false;
+    const statsSection = document.querySelector(".stats-section");
 
-            sliderObserver.observe(slider);
-        }
+    if (statsSection) {
+      const statsObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsTracked) {
 
-        // Stats Viewed
-        let statsTracked = false;
-        const statsSection = document.querySelector('.stats-section');
+            mixpanel.track("Stats Viewed", {
+              happy_clients: 100,
+              aum: 50000000
+            });
 
-        if (statsSection) {
-            const statsObserver = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && !statsTracked) {
-                        mixpanel.track("Stats Viewed", {
-                            happy_clients: 100,
-                            aum: 50000000
-                        });
-                        statsTracked = true;
-                    }
-                });
-            }, { threshold: 0.5 });
+            amplitude.track("Stats Viewed", {
+              happy_clients: 100,
+              aum: 50000000,
+              currency: "INR"
+            });
 
-            statsObserver.observe(statsSection);
-        }
-    </script>
+            statsTracked = true;
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statsObserver.observe(statsSection);
+    }
+  </script>
 
 </body>
 </html>
