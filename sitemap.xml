@@ -12,12 +12,62 @@
   </url>
 
   <url>
+    <loc>https://www.synvestify.in/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/Doing-nothing-is-best.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/financial-calculator.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/fire.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/goal-based-planning.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/health-wealth.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/insurance-planning.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.synvestify.in/investor-education.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.synvestify.in/contact.html</loc>
+    <loc>https://www.synvestify.in/psychology.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/risk-profiling.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/tax-planning.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.synvestify.in/year-end-review.html</loc>
     <priority>0.7</priority>
   </url>
 
