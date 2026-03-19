@@ -2,6 +2,7 @@
 import { useState } from 'react'
 
 const services = [
+  'Mutual Fund Distribution',
   'Tax Planning',
   'Insurance Planning',
   'Retirement Planning',
@@ -19,14 +20,14 @@ const ranges = [
   'Prefer not to say',
 ]
 
-const SHEET_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxwfSSFmys083nIKAg9HvXPOJFl4EK96rM4Mn04zBzR48p38KuxsHClYMijrC9l_3cO/exec'
 
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: '', email: '', phone: '', city: '',
     service: '', range: '', message: '',
   })
-  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [status, setStatus] = useState('idle')
   const [error, setError]   = useState('')
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
@@ -35,22 +36,25 @@ export default function ContactForm() {
     e.preventDefault()
     if (!form.name || !form.email || !form.phone) return
 
+    console.log('Submitting to:', SHEET_URL)
+    console.log('Form data:', form)
+
     setStatus('loading')
     setError('')
 
     try {
       await fetch(SHEET_URL, {
         method: 'POST',
-        mode: 'no-cors', // Google Apps Script requires no-cors
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
-      // no-cors means we can't read the response — assume success if no throw
       setStatus('success')
       setForm({ name: '', email: '', phone: '', city: '', service: '', range: '', message: '' })
     } catch (err) {
+      console.error('Submission error:', err)
       setStatus('error')
-      setError('Something went wrong. Please try again or email us directly.')
+      setError('Something went wrong. Please try again or email us directly at support@synvestify.in')
     }
   }
 
@@ -66,10 +70,8 @@ export default function ContactForm() {
         </h3>
         <p className="text-[.93rem] text-slate-500 leading-relaxed max-w-[360px] mb-8">
           Our team will reach out within 24 hours to schedule your free consultation.
-          Check your email for a confirmation.
         </p>
-        <button
-          onClick={() => setStatus('idle')}
+        <button onClick={() => setStatus('idle')}
           className="text-[.88rem] font-semibold text-accent hover:underline">
           Submit another enquiry →
         </button>
@@ -86,12 +88,8 @@ export default function ContactForm() {
           <label className="block text-[.76rem] font-semibold uppercase tracking-widest text-slate-500 mb-2">
             Full Name <span className="text-accent">*</span>
           </label>
-          <input
-            type="text"
-            required
-            placeholder="Rahul Sharma"
-            value={form.name}
-            onChange={e => set('name', e.target.value)}
+          <input type="text" required placeholder="Rahul Sharma"
+            value={form.name} onChange={e => set('name', e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-[.92rem] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
@@ -99,12 +97,8 @@ export default function ContactForm() {
           <label className="block text-[.76rem] font-semibold uppercase tracking-widest text-slate-500 mb-2">
             Email Address <span className="text-accent">*</span>
           </label>
-          <input
-            type="email"
-            required
-            placeholder="rahul@email.com"
-            value={form.email}
-            onChange={e => set('email', e.target.value)}
+          <input type="email" required placeholder="rahul@email.com"
+            value={form.email} onChange={e => set('email', e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-[.92rem] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
@@ -116,12 +110,8 @@ export default function ContactForm() {
           <label className="block text-[.76rem] font-semibold uppercase tracking-widest text-slate-500 mb-2">
             Phone Number <span className="text-accent">*</span>
           </label>
-          <input
-            type="tel"
-            required
-            placeholder="+91 98765 43210"
-            value={form.phone}
-            onChange={e => set('phone', e.target.value)}
+          <input type="tel" required placeholder="+91 98765 43210"
+            value={form.phone} onChange={e => set('phone', e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-[.92rem] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
@@ -129,11 +119,8 @@ export default function ContactForm() {
           <label className="block text-[.76rem] font-semibold uppercase tracking-widest text-slate-500 mb-2">
             City
           </label>
-          <input
-            type="text"
-            placeholder="New Delhi"
-            value={form.city}
-            onChange={e => set('city', e.target.value)}
+          <input type="text" placeholder="New Delhi"
+            value={form.city} onChange={e => set('city', e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-[.92rem] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
@@ -146,10 +133,7 @@ export default function ContactForm() {
         </label>
         <div className="flex flex-wrap gap-2">
           {services.map(s => (
-            <button
-              key={s}
-              type="button"
-              onClick={() => set('service', s)}
+            <button key={s} type="button" onClick={() => set('service', s)}
               className={`text-[.8rem] font-medium px-3.5 py-2 rounded-lg border transition-all ${
                 form.service === s
                   ? 'bg-navy text-white border-navy'
@@ -168,10 +152,7 @@ export default function ContactForm() {
         </label>
         <div className="flex flex-wrap gap-2">
           {ranges.map(r => (
-            <button
-              key={r}
-              type="button"
-              onClick={() => set('range', r)}
+            <button key={r} type="button" onClick={() => set('range', r)}
               className={`text-[.8rem] font-medium px-3.5 py-2 rounded-lg border transition-all ${
                 form.range === r
                   ? 'bg-navy text-white border-navy'
@@ -188,24 +169,20 @@ export default function ContactForm() {
         <label className="block text-[.76rem] font-semibold uppercase tracking-widest text-slate-500 mb-2">
           Anything else you&apos;d like us to know?
         </label>
-        <textarea
-          rows={4}
+        <textarea rows={4}
           placeholder="Tell us about your financial goals, current investments, or any specific questions..."
-          value={form.message}
-          onChange={e => set('message', e.target.value)}
+          value={form.message} onChange={e => set('message', e.target.value)}
           className="w-full px-4 py-3 rounded-xl border border-brand-border bg-white text-[.92rem] text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-accent transition-colors resize-none"
         />
       </div>
 
       {/* Error */}
       {status === 'error' && (
-        <p className="text-[.84rem] text-red-500">{error}</p>
+        <p className="text-[.84rem] text-red-500 bg-red-50 px-4 py-3 rounded-xl">{error}</p>
       )}
 
       {/* Submit */}
-      <button
-        type="submit"
-        disabled={status === 'loading'}
+      <button type="submit" disabled={status === 'loading'}
         className="w-full bg-navy text-white font-semibold text-[.95rem] py-4 rounded-xl hover:bg-navy-mid transition-all hover:-translate-y-px disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
         {status === 'loading' ? (
           <>
