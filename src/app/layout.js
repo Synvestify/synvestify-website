@@ -1,4 +1,5 @@
 import Script from 'next/script'
+import MixpanelInit from '@/components/MixpanelInit'
 import './globals.css'
 
 export const metadata = {
@@ -30,16 +31,10 @@ export default function RootLayout({ children }) {
           areaServed: ['India', 'USA', 'UK', 'Canada'],
         })}} />
       </head>
-      <Script
-        src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
-        strategy="afterInteractive"
-      />
-      <Script id="mixpanel-init" strategy="afterInteractive">
-        {`window.mixpanel = window.mixpanel || [];
-window.mixpanel.init("a23315f00db559a719782a1484ac00b8", {debug: false});
-window.mixpanel.track("Page Viewed");`}
-      </Script>
-      <body>{children}</body>
+      <body>
+        {children}
+        <MixpanelInit />
+      </body>
     </html>
   )
 }
