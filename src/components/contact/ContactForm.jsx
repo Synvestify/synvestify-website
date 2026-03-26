@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 const services = [
-  'Mutual Fund Distribution',
+  'Mutual Fund Investment',
   'Tax Planning',
   'Insurance Planning',
   'Retirement Planning',
