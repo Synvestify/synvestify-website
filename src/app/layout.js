@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
           var truxl = new window.truxl.TruxlClient({
             projectToken: 'trxl_ofEBIC1YD8K_JjRbYekBmlKhu_KAPBE0nB4mA4kNv9c',
             clientSecret: 'vI0e8mU6vxSd-29xvOPegNJCZcs3pbTLldqww5UEv-t92nZWxLKSxIhLaEMnNkGhsV__CVn6Snc0huNGsYq0IQ',
-            apiEndpoint: 'https://ingestion.api.truxl.com',
+            apiEndpoint: 'https://ingestion.api.stage.truxl.com',
             track_pageview: true,
             autocapture: true,
           });
