@@ -52,7 +52,7 @@ export default function RetirementPlanningPage() {
             {/* Quick stats */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { n: '₹5Cr+',  l: 'Avg retirement corpus needed\nfor a comfortable retirement' },
+                { n: '₹7Cr+',  l: 'Avg retirement corpus needed\nfor a comfortable retirement' },
                 { n: '30 yrs', l: 'Average retirement duration\npeople plan for' },
                 { n: '6–8%',   l: 'Inflation erodes your\npurchasing power annually' },
                 { n: 'Day 1',  l: 'Best time to start\nplanning your retirement' },

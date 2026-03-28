@@ -45,7 +45,7 @@ export default function AboutMission() {
               <div className="grid grid-cols-2 bg-white">
                 {[
                   { n: '100+',   l: 'Happy Clients' },
-                  { n: '₹5Cr+', l: 'Assets Under Management' },
+                  { n: '₹7Cr+', l: 'Assets Under Management' },
                   { n: '4',      l: 'Countries Served' },
                   { n: '2018',   l: 'Founded' },
                 ].map(({ n, l }, i) => (

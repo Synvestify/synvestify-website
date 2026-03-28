@@ -16,7 +16,7 @@ function calcSip(m, r, y) {
 
 const stats = [
   { num: '100+',  label: 'Happy Clients' },
-  { num: '₹5Cr+', label: 'Assets Managed' },
+  { num: '₹7Cr+', label: 'Assets Managed' },
   { num: '4',     label: 'Countries Served' },
 ]
 

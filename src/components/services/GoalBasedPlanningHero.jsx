@@ -2,10 +2,10 @@
 import { useState } from 'react'
 
 const goals = [
-  { emoji: '🏠', label: 'Home Purchase', amount: '₹1Cr - ₹5Cr', timeline: '3-5 years' },
+  { emoji: '🏠', label: 'Home Purchase', amount: '₹1Cr - ₹7Cr', timeline: '3-5 years' },
   { emoji: '🎓', label: 'Child Education', amount: '₹20L - ₹50L', timeline: '10-18 years' },
   { emoji: '🌍', label: 'World Tour', amount: '₹10L - ₹30L', timeline: '2-3 years' },
-  { emoji: '🏖️', label: 'Retirement', amount: '₹5Cr - ₹10Cr', timeline: '20-30 years' },
+  { emoji: '🏖️', label: 'Retirement', amount: '₹7Cr - ₹10Cr', timeline: '20-30 years' },
 ]
 
 export default function GoalBasedPlanningHero() {
