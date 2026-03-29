@@ -1,5 +1,4 @@
 import Script from 'next/script'
-import MixpanelInit from '@/components/MixpanelInit'
 import './globals.css'
 
 export const metadata = {
@@ -20,11 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RPKB2CRJ" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D0RPKB2CRJ');` }} />
-
-        {/* JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org', '@type': 'FinancialService',
           name: 'Synvestify', url: 'https://www.synvestify.in',
@@ -33,23 +29,8 @@ export default function RootLayout({ children }) {
           serviceType: ['Mutual Fund Distribution', 'Tax Planning', 'Insurance Planning', 'Retirement Planning', 'Wealth Management'],
           areaServed: ['India', 'USA', 'UK', 'Canada'],
         })}} />
-
-        {/* Truxl */}
-        <script src="https://sdk.truxl.com/javascript/truxl-0.1.0.umd.js" />
-        <script dangerouslySetInnerHTML={{ __html: `
-          var truxl = new window.truxl.TruxlClient({
-            projectToken: 'trxl_ofEBIC1YD8K_JjRbYekBmlKhu_KAPBE0nB4mA4kNv9c',
-            clientSecret: 'vI0e8mU6vxSd-29xvOPegNJCZcs3pbTLldqww5UEv-t92nZWxLKSxIhLaEMnNkGhsV__CVn6Snc0huNGsYq0IQ',
-            apiEndpoint: 'https://ingestion.api.stage.truxl.com',
-            track_pageview: true,
-            autocapture: true,
-          });
-        `}} />
       </head>
-      <body>
-        {children}
-        <MixpanelInit />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
