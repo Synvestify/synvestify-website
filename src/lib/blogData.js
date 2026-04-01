@@ -7,7 +7,96 @@ export const posts = [
     date:     'March 26, 2026',
     readTime: '6 min read',
     featured: true,
-    content:  '',
+    content: `
+## The Fear Index Is Spiking, Again
+
+When geopolitical tension rises, the first instinct of retail investors is to act. Sell. Move to bonds. Hide in gold.
+
+The news cycle feeds this. CNN is running 24-hour Iran war coverage. Your WhatsApp groups are buzzing with predictions: "This will destroy tech stocks." "Oil will hit $150." "The market will crash 30%."
+
+But here's what history consistently shows us: Wars and geopolitical events create short-term volatility, not long-term market damage. The investors who panic sell end up worse off than those who stay invested.
+
+## Historical Perspective: Wars Have Rarely Broken Markets
+
+Let's look at data. During the 1973 Arab-Israeli War (Yom Kippur War), oil prices tripled in weeks. Markets fell 30% in that year. Yet within 2 years, the Dow had fully recovered. Within 5 years, it was up 100%.
+
+- **1990 Gulf War**: Brief spike in oil. S&P 500 fell 20% before the war, but was up 30% a year later.
+- **2001 9/11 Attacks**: Markets closed for 4 days. When they reopened, there was a sharp 11% drop. But within a year, the market was up 15%. Within 3 years, up 60%.
+- **2003 Iraq War**: Oil spiked, then fell. Markets rallied during the conflict.
+- **2022 Russia-Ukraine War**: Oil jumped 40% in weeks. Global recession fears dominated. Markets fell 20%. Yet by mid-2023, they had rallied 40%.
+
+The pattern is consistent. In every case, staying invested beat panic-selling.
+
+## What Actually Moves Long-Term Markets
+
+Wars create anxiety. But what moves markets over years are:
+
+- Corporate earnings growth (or decline)
+- Interest rates and inflation
+- Technological progress
+- Consumer spending and employment
+
+A 4-week war — even in the Middle East with geopolitical significance — does not fundamentally change these.
+
+The US GDP will continue growing. Indian mutual fund valuations are based on earnings, not headlines. Tech companies will keep innovating. Your SIP contributions will buy shares at lower prices when sentiment is pessimistic.
+
+## How Oil Prices Hit Your Portfolio (And Why It May Not Matter)
+
+Oil at $106? That's concerning if you're a petrochemical company. But what about your typical mutual fund or stock portfolio?
+
+**The impact is mixed:**
+- Refineries and energy sectors might suffer (fewer of these in Indian portfolios)
+- IT companies export to the US — a global slowdown hurts them, but wars aren't guaranteed to cause lasting slowdowns
+- FMCG, pharma, and finance — core holdings in Indian mutual funds — are largely insulated
+- Higher oil prices push inflation slightly, which might make RBI tighten rates, which is slightly bad for growth stocks
+
+But here's the key: These are marginal impacts, not black-swan events.
+
+## What You Should Actually Do Right Now
+
+**1. Don't Pause Your SIP**
+
+This is the most important thing. When markets fall 15-20% due to fear, your favorite mutual fund is 15-20% cheaper. Your ₹10,000 monthly SIP buys more units. Five years from now, this lower entry price will look brilliant.
+
+Pausing your SIP is mathematically equivalent to saying: "I'm locking in my fear. Please freeze my portfolio at the worst possible time."
+
+**2. Don't Add Lump Sum Money Right Now**
+
+Conversely, this is not a time to deploy 3 years of savings into the market hoping to catch the bottom. You won't catch the bottom. No one does. If you have cash to invest, invest it gradually over 3-6 months.
+
+**3. Don't Check Your Portfolio Daily**
+
+The news is designed to trigger emotion. Every 30-minute market update is optimized to make you anxious. Stop consuming it. Check your portfolio quarterly. That's it.
+
+**4. Use This Opportunity to Rebalance**
+
+If you haven't rebalanced your portfolio in over a year, do it now. Sell winners that have drifted above your target allocation. Buy sectors that have fallen below target (if they fit your strategy).
+
+Rebalancing forces you to "buy low, sell high" automatically. It's the opposite of panic-selling.
+
+## The Long Game
+
+Markets have survived world wars, depressions, pandemics, and financial crises. Yes, some wars caused recessions. But even then, the market recovered. And if you were holding quality, diversified index funds, you still made money.
+
+India's stock market has compounded at 12-15% annually for the last 20 years, despite:
+- The 2008 financial crisis
+- The 2020 COVID crash
+- Multiple geopolitical tensions in the Middle East
+- Multiple RBI rate hikes
+- Currency volatility
+
+The question isn't whether this conflict will impact markets. It will, short-term. The question is: Will you let a 4-week conflict derail a 20-year investment plan?
+
+The answer should be no.
+
+## The Bottom Line
+
+Volatility is not your enemy. Panic is.
+
+Continue your SIPs. Don't check daily. Rebalance if due. And remember: The best time to invest is always going to be 10 years ago. The second-best time is today.
+
+Even on days when CNN is screaming about war.
+    `,
   },
   {
     slug:     'doing-nothing-is-best',
