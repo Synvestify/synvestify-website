@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-// Simple markdown-ish renderer — handles ## headings, **bold**, bullet points
+// Simple markdown-ish renderer — handles ## headings, **bold**, bullet points, and images
 function renderContent(content) {
   return content
     .trim()
@@ -26,6 +26,21 @@ function renderContent(content) {
     .map((line, i) => {
       line = line.trim()
       if (!line) return <div key={i} className="h-3" />
+
+      // Image: ![alt](/path/to/image.png)
+      const imageMatch = line.match(/^!\[(.*?)\]\((.*?)\)$/)
+      if (imageMatch) {
+        const [, alt, src] = imageMatch
+        return (
+          <div key={i} className="my-8 sm:my-12 rounded-lg sm:rounded-2xl overflow-hidden bg-gray-100">
+            <img 
+              src={src}
+              alt={alt}
+              className="w-full h-auto"
+            />
+          </div>
+        )
+      }
 
       // H2
       if (line.startsWith('## ')) {

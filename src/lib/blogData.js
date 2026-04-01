@@ -7,7 +7,7 @@ export const posts = [
     date:     'March 26, 2026',
     readTime: '6 min read',
     featured: true,
-    image: 'https://images.unsplash.com/photo-1611432579715-7b3c4ca6b8f5?w=800&q=80',
+    image: '/images/blog/war-and-finance.jpg',
     color: 'from-slate-600 to-slate-800',
     content: `
 ## The Fear Index Is Spiking, Again
@@ -28,6 +28,8 @@ Let's look at data. During the 1973 Arab-Israeli War (Yom Kippur War), oil price
 - **2022 Russia-Ukraine War**: Oil jumped 40% in weeks. Global recession fears dominated. Markets fell 20%. Yet by mid-2023, they had rallied 40%.
 
 The pattern is consistent. In every case, staying invested beat panic-selling.
+
+![Historical Wars and Market Recovery Patterns](/images/blog/war-market-recovery-chart.png)
 
 ## What Actually Moves Long-Term Markets
 
@@ -53,6 +55,8 @@ Oil at $106? That's concerning if you're a petrochemical company. But what about
 - Higher oil prices push inflation slightly, which might make RBI tighten rates, which is slightly bad for growth stocks
 
 But here's the key: These are marginal impacts, not black-swan events.
+
+![Oil Price Trajectory During Conflicts](/images/blog/oil-price-trajectory.png)
 
 ## What You Should Actually Do Right Now
 
@@ -89,9 +93,13 @@ India's stock market has compounded at 12-15% annually for the last 20 years, de
 
 The question isn't whether this conflict will impact markets. It will, short-term. The question is: Will you let a 4-week conflict derail a 20-year investment plan?
 
+![India Stock Market: 20-Year Growth Despite Crises](/images/blog/india-20yr-growth.png)
+
 The answer should be no.
 
 ## The Bottom Line
+
+![Panic Seller vs Long-Term Investor](/images/blog/panic-vs-longterm.png)
 
 Volatility is not your enemy. Panic is.
 
@@ -108,7 +116,7 @@ Even on days when CNN is screaming about war.
     date:     'February 12, 2026',
     readTime: '3 min read',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1611432579715-7b3c4ca6b8f5?w=800&q=80',
+    image: '/images/blog/doing-nothing-is-best.jpg',
     color: 'from-blue-600 to-blue-800',
     content: `
 ## The Urge to Act
@@ -162,7 +170,7 @@ That's not doing nothing. That's doing everything right.
     date:     'May 3, 2025',
     readTime: '4 min read',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    image: '/images/blog/psychology.jpg',
     color: 'from-purple-600 to-purple-800',
     content: `
 ## Your Brain Is Not Wired for Investing
@@ -217,7 +225,7 @@ alpha they could generate through stock picking.
     date:     'June 29, 2025',
     readTime: '4 min read',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1579621970795-f405cc86f82c?w=800&q=80',
+    image: '/images/blog/fire.jpg',
     color: 'from-green-600 to-green-800',
     content: `
 ## What Is FIRE?
@@ -271,7 +279,7 @@ It's whether you can afford not to start planning for it.
     date:     'August 18, 2025',
     readTime: '4 min read',
     featured: false,
-    image: 'https://images.unsplash.com/photo-1576091160550-112173f31f61?w=800&q=80',
+    image: '/images/blog/health-wealth.jpg',
     color: 'from-red-600 to-red-800',
     content: `
 ## The Medical Expense Crisis
@@ -323,7 +331,7 @@ They are not separate goals — they are the same goal.
     excerpt:  'December is the best time to review your finances, rebalance your portfolio, and plan for the new year. Here\'s everything you need to check before January.',
     category: 'Financial Planning',
     date:     'December 15, 2025',
-    image: 'https://images.unsplash.com/photo-1543269865-cbdf26cecded?w=800&q=80',
+    image: '/images/blog/year-end-review.jpg',
     color: 'from-orange-600 to-orange-800',
     readTime: '4 min read',
     featured: false,
