@@ -1,12 +1,22 @@
 export const posts = [
   {
+    slug:     'war-and-finance-iran-israel-2026',
+    title:    'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments',
+    excerpt:  'Markets are swinging wildly as the US-Israel war with Iran enters its fourth week. Oil above $106. The Dow surging 1,000 points on peace rumours, then falling back. Here is what history tells us — and why volatility is not your enemy.',
+    category: 'Market Insights',
+    date:     'March 26, 2026',
+    readTime: '6 min read',
+    featured: true,
+    content:  '',
+  },
+  {
     slug:     'doing-nothing-is-best',
     title:    'When Doing Nothing Is the Smartest Investment Decision',
     excerpt:  'Market crashes trigger panic. But the investors who do nothing — and stay the course — almost always come out ahead. Here\'s the science and psychology behind it.',
     category: 'Behavioral Finance',
     date:     'February 12, 2026',
     readTime: '3 min read',
-    featured: true,
+    featured: false,
     content: `
 ## The Urge to Act
 
