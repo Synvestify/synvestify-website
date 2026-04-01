@@ -5,7 +5,7 @@ export const posts = [
     excerpt:  'Market crashes trigger panic. But the investors who do nothing — and stay the course — almost always come out ahead. Here\'s the science and psychology behind it.',
     category: 'Behavioral Finance',
     date:     'February 12, 2026',
-    readTime: '6 min read',
+    readTime: '3 min read',
     featured: true,
     content: `
 ## The Urge to Act
@@ -13,8 +13,7 @@ export const posts = [
 When markets fall 20%, every instinct screams: do something. Sell. Switch funds. Move to FD. 
 The financial media amplifies this — breaking news, red tickers, experts predicting further crashes.
 
-But here's what decades of data show: **the investors who do nothing during market corrections 
-almost always outperform those who react.**
+But here's what decades of data show: The investors who do nothing during market corrections almost always outperform those who react.
 
 ## Why Inaction Is a Strategy
 
@@ -58,7 +57,7 @@ That's not doing nothing. That's doing everything right.
     excerpt:  'Loss aversion, herd mentality, recency bias — the cognitive biases that quietly destroy investor wealth, and how to protect yourself from your own brain.',
     category: 'Investor Psychology',
     date:     'May 3, 2025',
-    readTime: '7 min read',
+    readTime: '4 min read',
     featured: false,
     content: `
 ## Your Brain Is Not Wired for Investing
@@ -111,7 +110,7 @@ alpha they could generate through stock picking.
     excerpt:  'FIRE (Financial Independence, Retire Early) is not about frugality or sacrifice. It\'s about intentionality. Here\'s how to calculate your FIRE number and build a path to it.',
     category: 'FIRE Planning',
     date:     'June 29, 2025',
-    readTime: '8 min read',
+    readTime: '4 min read',
     featured: false,
     content: `
 ## What Is FIRE?
@@ -163,7 +162,7 @@ It's whether you can afford not to start planning for it.
     excerpt:  'Medical expenses are the #1 cause of financial ruin in Indian households. But the relationship runs deeper — your physical health directly impacts your earning potential and investment decisions.',
     category: 'Wellness & Finance',
     date:     'August 18, 2025',
-    readTime: '5 min read',
+    readTime: '4 min read',
     featured: false,
     content: `
 ## The Medical Expense Crisis
@@ -215,7 +214,7 @@ They are not separate goals — they are the same goal.
     excerpt:  'December is the best time to review your finances, rebalance your portfolio, and plan for the new year. Here\'s everything you need to check before January.',
     category: 'Financial Planning',
     date:     'December 15, 2025',
-    readTime: '6 min read',
+    readTime: '4 min read',
     featured: false,
     content: `
 ## Why December Matters
