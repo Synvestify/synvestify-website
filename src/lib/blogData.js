@@ -7,6 +7,8 @@ export const posts = [
     date:     'March 26, 2026',
     readTime: '6 min read',
     featured: true,
+    image: 'https://images.unsplash.com/photo-1611432579715-7b3c4ca6b8f5?w=800&q=80',
+    color: 'from-slate-600 to-slate-800',
     content: `
 ## The Fear Index Is Spiking, Again
 
@@ -106,6 +108,8 @@ Even on days when CNN is screaming about war.
     date:     'February 12, 2026',
     readTime: '3 min read',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1611432579715-7b3c4ca6b8f5?w=800&q=80',
+    color: 'from-blue-600 to-blue-800',
     content: `
 ## The Urge to Act
 
@@ -158,6 +162,8 @@ That's not doing nothing. That's doing everything right.
     date:     'May 3, 2025',
     readTime: '4 min read',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+    color: 'from-purple-600 to-purple-800',
     content: `
 ## Your Brain Is Not Wired for Investing
 
@@ -211,6 +217,8 @@ alpha they could generate through stock picking.
     date:     'June 29, 2025',
     readTime: '4 min read',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1579621970795-f405cc86f82c?w=800&q=80',
+    color: 'from-green-600 to-green-800',
     content: `
 ## What Is FIRE?
 
@@ -263,6 +271,8 @@ It's whether you can afford not to start planning for it.
     date:     'August 18, 2025',
     readTime: '4 min read',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1576091160550-112173f31f61?w=800&q=80',
+    color: 'from-red-600 to-red-800',
     content: `
 ## The Medical Expense Crisis
 
@@ -313,6 +323,8 @@ They are not separate goals — they are the same goal.
     excerpt:  'December is the best time to review your finances, rebalance your portfolio, and plan for the new year. Here\'s everything you need to check before January.',
     category: 'Financial Planning',
     date:     'December 15, 2025',
+    image: 'https://images.unsplash.com/photo-1543269865-cbdf26cecded?w=800&q=80',
+    color: 'from-orange-600 to-orange-800',
     readTime: '4 min read',
     featured: false,
     content: `
