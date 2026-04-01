@@ -59,7 +59,7 @@ export default function Blog() {
               {/* Image */}
               <div className="md:w-1/2 h-[220px] sm:h-[280px] md:h-auto relative overflow-hidden bg-gradient-to-br from-slate-600 to-slate-800">
                 <img 
-                  src="https://images.unsplash.com/photo-1611432579715-7b3c4ca6b8f5?w=800&q=80"
+                  src="/images/blog/war-and-finance.jpg"
                   alt="Featured article"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
