@@ -19,8 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0RPKB2CRJ" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D0RPKB2CRJ');` }} />
+
+        {/* JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org', '@type': 'FinancialService',
           name: 'Synvestify', url: 'https://www.synvestify.in',
@@ -30,7 +33,44 @@ export default function RootLayout({ children }) {
           areaServed: ['India', 'USA', 'UK', 'Canada'],
         })}} />
       </head>
+
       <body>{children}</body>
+
+      {/* Truxl SDK */}
+      <Script
+        src="https://sdk.truxl.com/javascript/truxl-0.1.0.umd.js"
+        strategy="afterInteractive"
+      />
+
+      {/* Truxl Init */}
+      <Script
+        id="truxl-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: `
+          function initTruxl() {
+            if (window.truxl && window.truxl.TruxlClient) {
+              window._truxl = new window.truxl.TruxlClient({
+                projectToken: 'YOUR_PROJECT_TOKEN',
+                clientSecret: 'YOUR_CLIENT_SECRET',
+                apiEndpoint: 'https://ingestion.api.truxl.com',
+                batchSize: 20,
+                flushInterval: 5000,
+                maxQueueSize: 10000,
+                retryAttempts: 5,
+                retryBaseDelay: 1000,
+                transport: 'http',
+                track_pageview: true,
+                autocapture: true,
+                debug: true,
+              });
+            } else {
+              setTimeout(initTruxl, 100);
+            }
+          }
+          initTruxl();
+        `}}
+      />
+
     </html>
   )
 }

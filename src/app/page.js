@@ -10,6 +10,7 @@ import FAQ            from '@/components/FAQ'
 import CTA            from '@/components/CTA'
 import Footer         from '@/components/Footer'
 import ScrollReveal   from '@/components/ScrollReveal'
+import TruxlInit      from '@/components/TruxlInit'
 
 export const metadata = {
   title: 'Synvestify — Synchronizing Your Investments',
@@ -20,6 +21,7 @@ export default function HomePage() {
   return (
     <>
       <ScrollReveal />
+      <TruxlInit />
       <Navbar />
       <main>
         <Hero />
