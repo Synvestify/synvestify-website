@@ -50,9 +50,9 @@ export default function RootLayout({ children }) {
           function initTruxl() {
             if (window.truxl && window.truxl.TruxlClient) {
               window._truxl = new window.truxl.TruxlClient({
-                projectToken: 'YOUR_PROJECT_TOKEN',
-                clientSecret: 'YOUR_CLIENT_SECRET',
-                apiEndpoint: 'https://ingestion.api.truxl.com',
+                projectToken: 'trxl_ofEBIC1YD8K_JjRbYekBmlKhu_KAPBE0nB4mA4kNv9c',
+                clientSecret: 'vI0e8mU6vxSd-29xvOPegNJCZcs3pbTLldqww5UEv-t92nZWxLKSxIhLaEMnNkGhsV__CVn6Snc0huNGsYq0IQ',
+                apiEndpoint: 'https://ingestion.api.stage.truxl.com',
                 batchSize: 20,
                 flushInterval: 5000,
                 maxQueueSize: 10000,
