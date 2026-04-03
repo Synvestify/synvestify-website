@@ -33,6 +33,8 @@ export default function Footer() {
               <span>📍 14-F Nivedita Enclave A-6, Paschim Vihar, New Delhi – 110063</span>
               <a href="tel:+919599698871" className="hover:text-slate-800 transition-colors">📞 +91-9599698871</a>
               <a href="mailto:support@synvestify.in" className="hover:text-slate-800 transition-colors">✉️ support@synvestify.in</a>
+              <span className="text-[.7rem] text-slate-500 mt-2">AMFI Registered Mutual Fund Distributor</span>
+              <span className="text-[.7rem] text-slate-500">ARN: 163679 | ARN: 343166</span>
             </div>
           </div>
 

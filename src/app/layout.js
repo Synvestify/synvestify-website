@@ -31,6 +31,8 @@ export default function RootLayout({ children }) {
           address: { '@type': 'PostalAddress', streetAddress: '14-F Nivedita Enclave A-6 Paschim Vihar', addressLocality: 'New Delhi', postalCode: '110063', addressCountry: 'IN' },
           serviceType: ['Mutual Fund Distribution', 'Tax Planning', 'Insurance Planning', 'Retirement Planning', 'Wealth Management'],
           areaServed: ['India', 'USA', 'UK', 'Canada'],
+          description: 'AMFI Registered Mutual Fund Distributor. ARN: 163679 | ARN: 343166',
+          sameAs: ['https://www.synvestify.in'],
         })}} />
       </head>
 

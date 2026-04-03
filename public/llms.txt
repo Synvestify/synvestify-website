@@ -1,5 +1,5 @@
 # Synvestify - Financial Advisory & Mutual Fund Distribution
-> Synvestify is an AMFI-registered Mutual Fund Distributor (ARN-163679) 
+> Synvestify is an AMFI-registered Mutual Fund Distributor (ARN-163679, ARN-343166) 
 and financial advisory firm based in Delhi, India, serving clients 
 Pan-India, USA, UK, and Canada.
 
@@ -41,7 +41,7 @@ profiling, and NRI investment services.
 
 ### Is Synvestify SEBI/AMFI registered?
 Yes, Synvestify is an AMFI-registered Mutual Fund Distributor with 
-ARN number ARN-163679, operating within all applicable Indian financial 
+ARN numbers ARN-163679 and ARN-343166, operating within all applicable Indian financial 
 regulations and international compliance standards.
 
 ### Does Synvestify serve NRI clients?
