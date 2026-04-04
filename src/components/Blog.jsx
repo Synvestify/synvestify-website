@@ -16,7 +16,7 @@ const smallPosts = [
     title: "FIRE: Financial Freedom Isn't a Dream — It's a Decision",   
     desc: 'Retire at 45 with a clear corpus target and disciplined SIP strategy.',            
     category: 'FIRE Planning',
-    image: 'https://images.unsplash.com/photo-1579621970795-f405cc86f82c?w=800&q=80',
+    image: '/images/blog/fire.jpg',
     color: 'from-green-600 to-green-800'
   },
   { 
@@ -25,7 +25,7 @@ const smallPosts = [
     title: 'The Connection Between Your Health and Your Wealth',         
     desc: 'Your physical and financial wellbeing are more connected than you think.',
     category: 'Wellness & Finance',
-    image: 'https://images.unsplash.com/photo-1576091160550-112173f31f61?w=800&q=80',
+    image: '/images/blog/health-wealth.jpg',
     color: 'from-red-600 to-red-800'
   },
 ]
@@ -70,7 +70,7 @@ export default function Blog() {
               </div>
               {/* Content */}
               <div className="md:w-1/2 p-5 sm:p-7 md:p-8 flex flex-col justify-center">
-                <p className="text-[.55rem] sm:text-[.63rem] font-semibold uppercase tracking-[.12em] text-accent mb-2 sm:mb-3">Market Insights · Mar 2026</p>
+                <p className="text-[.55rem] sm:text-[.63rem] font-semibold uppercase tracking-[.12em] text-accent mb-2 sm:mb-3">Market Insights · Apr 2026</p>
                 <h3 className="font-serif text-[.95rem] sm:text-[1.15rem] md:text-[1.3rem] font-semibold text-slate-900 leading-[1.35] mb-3 sm:mb-4">
                   War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments
                 </h3>

@@ -2,8 +2,8 @@ import Navbar         from '@/components/Navbar'
 import Hero           from '@/components/Hero'
 import MarqueeTrustBar from '@/components/MarqueeTrustBar'
 import About          from '@/components/About'
+import SynvestifyModelVideo from '@/components/SynvestifyModelVideo'
 import Services       from '@/components/Services'
-import Process        from '@/components/Process'
 import Testimonials   from '@/components/Testimonials'
 import Blog           from '@/components/Blog'
 import FAQ            from '@/components/FAQ'
@@ -27,8 +27,8 @@ export default function HomePage() {
         <Hero />
         <MarqueeTrustBar />
         <About />
+        <SynvestifyModelVideo />
         <Services />
-        <Process />
         <Testimonials />
         <Blog />
         <FAQ />
