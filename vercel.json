@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "synvestify.in"
+        }
+      ],
+      "destination": "https://www.synvestify.in/:path*",
+      "permanent": true
+    }
+  ]
+}
