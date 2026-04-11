@@ -9,12 +9,10 @@ export async function generateStaticParams() {
   return posts.map(p => ({ slug: p.slug }))
 }
 
-export async function generateMetadata({ params }) {
-  const post = getPost(params.slug)
-  if (!post) return {}
+export async function generateMetadata() {
   return {
-    title: `${post.title} — Synvestify`,
-    description: post.excerpt,
+    title: 'Your Money Calendar for FY 2026–27 — Synvestify',
+    description: 'Every deadline, every tax task, every financial action you need to take — month by month for FY 2026–27.',
   }
 }
 
@@ -73,7 +71,7 @@ export default function BlogPostPage({ params }) {
   const post = getPost(params.slug)
   if (!post) notFound()
   if (!post.content || post.content === 'custom') notFound()
-    
+
   const related = posts
     .filter(p => p.slug !== post.slug && p.content && p.content.trim())
     .slice(0, 3)
