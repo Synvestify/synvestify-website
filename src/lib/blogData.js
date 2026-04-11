@@ -1,5 +1,29 @@
 export const posts = [
   {
+    slug:     'money-calendar-2026-27',
+    title:    'Your Money Calendar for FY 2026–27',
+    excerpt:  'Every deadline, every tax task, every financial action you need to take — month by month, for the full financial year. Advance tax dates, ITR filing, 80C limits, insurance reviews and more. Bookmark this.',
+    category: 'Financial Planning',
+    date:     'April 10, 2026',
+    readTime: '5 min read',
+    featured: true,
+    image:    '/images/blog/money-calendar.jpg',
+    color:    'from-blue-700 to-blue-900',
+    content:  'custom',
+  },
+  {
+    slug:     'war-and-finance-iran-israel-2026',
+    title:    'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments',
+    excerpt:  'Markets are swinging wildly as the US-Israel war with Iran enters its fourth week. Oil above $106. The Dow surging 1,000 points on peace rumours, then falling back. Here is what history tells us — and why volatility is not your enemy.',
+    category: 'Market Insights',
+    date:     'March 26, 2026',
+    readTime: '9 min read',
+    featured: false,
+    image:    '/images/blog/war-and-finance.jpg',
+    color:    'from-slate-700 to-slate-900',
+    content:  'custom',
+  },
+  {
     slug:     'doing-nothing-is-best',
     title:    'When Doing Nothing Is the Smartest Investment Decision',
     excerpt:  'Market crashes trigger panic. But the investors who do nothing — and stay the course — almost always come out ahead. Here\'s the science and psychology behind it.',
@@ -7,8 +31,8 @@ export const posts = [
     date:     'February 12, 2026',
     readTime: '3 min read',
     featured: false,
-    image: '/images/blog/doing-nothing-is-best.jpg',
-    color: 'from-blue-600 to-blue-800',
+    image:    '/images/blog/doing-nothing-is-best.jpg',
+    color:    'from-blue-600 to-blue-800',
     content: `
 ## The Urge to Act
 
@@ -61,8 +85,8 @@ That's not doing nothing. That's doing everything right.
     date:     'May 3, 2025',
     readTime: '4 min read',
     featured: false,
-    image: '/images/blog/psychology.jpg',
-    color: 'from-purple-600 to-purple-800',
+    image:    '/images/blog/psychology.jpg',
+    color:    'from-purple-600 to-purple-800',
     content: `
 ## Your Brain Is Not Wired for Investing
 
@@ -116,8 +140,8 @@ alpha they could generate through stock picking.
     date:     'June 29, 2025',
     readTime: '4 min read',
     featured: false,
-    image: '/images/blog/fire.jpg',
-    color: 'from-green-600 to-green-800',
+    image:    '/images/blog/fire.jpg',
+    color:    'from-green-600 to-green-800',
     content: `
 ## What Is FIRE?
 
@@ -170,8 +194,8 @@ It's whether you can afford not to start planning for it.
     date:     'August 18, 2025',
     readTime: '4 min read',
     featured: false,
-    image: '/images/blog/health-wealth.jpg',
-    color: 'from-red-600 to-red-800',
+    image:    '/images/blog/health-wealth.jpg',
+    color:    'from-red-600 to-red-800',
     content: `
 ## The Medical Expense Crisis
 
@@ -222,10 +246,10 @@ They are not separate goals — they are the same goal.
     excerpt:  'December is the best time to review your finances, rebalance your portfolio, and plan for the new year. Here\'s everything you need to check before January.',
     category: 'Financial Planning',
     date:     'December 15, 2025',
-    image: '/images/blog/year-end-review.jpg',
-    color: 'from-orange-600 to-orange-800',
     readTime: '4 min read',
     featured: false,
+    image:    '/images/blog/year-end-review.jpg',
+    color:    'from-orange-600 to-orange-800',
     content: `
 ## Why December Matters
 
