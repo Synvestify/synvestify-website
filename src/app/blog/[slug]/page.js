@@ -1,18 +1,22 @@
 import Link         from 'next/link'
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Navbar        from '@/components/Navbar'
 import Footer        from '@/components/Footer'
 import ScrollReveal  from '@/components/ScrollReveal'
 import { getPost, posts } from '@/lib/blogData'
 
 export async function generateStaticParams() {
-  return posts.map(p => ({ slug: p.slug }))
+  return posts
+    .filter(p => p.content !== 'custom')
+    .map(p => ({ slug: p.slug }))
 }
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }) {
+  const post = getPost(params.slug)
+  if (!post) return {}
   return {
-    title: 'Your Money Calendar for FY 2026–27 — Synvestify',
-    description: 'Every deadline, every tax task, every financial action you need to take — month by month for FY 2026–27.',
+    title: `${post.title} — Synvestify`,
+    description: post.excerpt,
   }
 }
 
@@ -72,9 +76,9 @@ export default function BlogPostPage({ params }) {
   if (!post) notFound()
   if (!post.content || post.content === 'custom') notFound()
 
-  const related = posts
-    .filter(p => p.slug !== post.slug && p.content && p.content.trim())
-    .slice(0, 3)
+const related = posts
+  .filter(p => p.slug !== post.slug && p.content && p.content !== 'custom')
+  .slice(0, 3)
 
   return (
     <>
