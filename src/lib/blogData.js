@@ -1,4 +1,18 @@
 export const posts = [
+  
+  {
+  slug:     'retirement-across-generations',
+  title:    'The Changing Face of Retirement: What Each Generation Got — and What You Need',
+  excerpt:  'Your grandfather retired at 55 with a pension and a joint family. You will retire at 62, alone, with no guaranteed pension, and live until 80. The retirement problem has changed completely — and so must the solution.',
+  category: 'Retirement Planning',
+  date:     'May 2, 2026',
+  readTime: '9 min read',
+  featured: true,
+  image:    '/images/blog/retirement_generation.jpg',
+  color:    'from-blue-700 to-indigo-900',
+  content:  'custom',
+},
+
   {
   slug:     'akshaya-tritiya-2026',
   title:    'Akshaya Tritiya 2026: The Right Way to Buy Gold This Year',
@@ -6,7 +20,7 @@ export const posts = [
   category: 'Gold & Investing',
   date:     'April 18, 2026',
   readTime: '7 min read',
-  featured: true,
+  featured: false,
   image:    '/images/blog/akshaya-tritiya.jpg',
   color:    'from-amber-600 to-amber-900',
   content:  'custom',
