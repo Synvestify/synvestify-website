@@ -29,6 +29,17 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'VideoObject',
+        name: 'The Synvestify Model — How We Synchronize Your Investments',
+        description: 'Watch how Synvestify synchronizes your investments across different asset classes, tax strategies, and life goals — a holistic approach to wealth management.',
+        thumbnailUrl: 'https://www.synvestify.in/images/synvestify-model-thumbnail.png',
+        uploadDate: '2026-04-04',
+        duration: 'PT6M',
+        contentUrl: 'https://www.synvestify.in/videos/synvestify-model.mp4',
+        publisher: { '@type': 'Organization', name: 'Synvestify', url: 'https://www.synvestify.in' },
+      }) }} />
       <ScrollReveal />
       <TruxlInit />
       <Navbar />
