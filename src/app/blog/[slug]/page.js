@@ -12,16 +12,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = getPost(params.slug)
+  const { slug } = await params
+  const post = getPost(slug)
   if (!post) return {}
   return {
     title: `${post.title} | Synvestify`,
     description: post.excerpt,
-    alternates: { canonical: `https://www.synvestify.in/blog/${params.slug}` },
+    alternates: { canonical: `https://www.synvestify.in/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://www.synvestify.in/blog/${params.slug}`,
+      url: `https://www.synvestify.in/blog/${slug}`,
       siteName: 'Synvestify',
       type: 'article',
       ...(post.image && { images: [{ url: `https://www.synvestify.in${post.image}`, width: 1200, height: 630, alt: post.title }] }),
@@ -178,8 +179,9 @@ function renderContent(content) {
   return elements
 }
 
-export default function BlogPostPage({ params }) {
-  const post = getPost(params.slug)
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params
+  const post = getPost(slug)
   if (!post) notFound()
   if (!post.content || post.content === 'custom') notFound()
 
