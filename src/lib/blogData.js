@@ -10,7 +10,8 @@ export const posts = [
     featured: true,
     image:    '/images/blog/education-cost.jpg',
     color:    'from-teal-600 to-teal-900',
-    content: `
+    content:  'custom',
+    _content_backup: `
 Education inflation in India runs at 10–12% per year — nearly double the general rate. A ₹25 lakh MBA today will cost over ₹1 crore in 15 years. Here is what every parent needs to know and plan for.
 
 ---
