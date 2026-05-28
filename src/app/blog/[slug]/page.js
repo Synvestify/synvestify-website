@@ -15,60 +15,167 @@ export async function generateMetadata({ params }) {
   const post = getPost(params.slug)
   if (!post) return {}
   return {
-    title: `${post.title} — Synvestify`,
+    title: `${post.title} | Synvestify`,
     description: post.excerpt,
+    alternates: { canonical: `https://www.synvestify.in/blog/${params.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://www.synvestify.in/blog/${params.slug}`,
+      siteName: 'Synvestify',
+      type: 'article',
+      ...(post.image && { images: [{ url: `https://www.synvestify.in${post.image}`, width: 1200, height: 630, alt: post.title }] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      ...(post.image && { images: [`https://www.synvestify.in${post.image}`] }),
+    },
   }
 }
 
-// Simple markdown-ish renderer
+// Inline formatting: bold, italic
+function fmt(text) {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900">$1</strong>')
+    .replace(/\*((?!\*)[^*\n]+)\*/g, '<em>$1</em>')
+}
+
+// Detect markdown table separator row (|---|---|)
+function isSeparatorRow(row) {
+  return row.split('|').slice(1, -1).every(cell => /^\s*:?-+:?\s*$/.test(cell))
+}
+
+// Markdown renderer — supports h2/h3, hr, blockquote, table, bullet, numbered, image, paragraph
 function renderContent(content) {
   if (!content || !content.trim()) return null
-  return content
-    .trim()
-    .split('\n')
-    .map((line, i) => {
-      line = line.trim()
-      if (!line) return <div key={i} className="h-3" />
 
-      const imageMatch = line.match(/^!\[(.*?)\]\((.*?)\)$/)
-      if (imageMatch) {
-        const [, alt, src] = imageMatch
-        return (
-          <div key={i} className="my-8 sm:my-12 rounded-lg sm:rounded-2xl overflow-hidden bg-gray-100">
-            <img src={src} alt={alt} className="w-full h-auto" />
-          </div>
-        )
-      }
-      if (line.startsWith('## ')) {
-        return (
-          <h2 key={i} className="font-serif text-[1.45rem] font-bold text-slate-900 mt-10 mb-4 leading-snug">
-            {line.replace('## ', '')}
-          </h2>
-        )
-      }
-      if (line.startsWith('- ')) {
-        return (
-          <div key={i} className="flex items-start gap-2.5 mb-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-[9px]" />
-            <span className="text-[.93rem] text-slate-600 leading-[1.82]"
-              dangerouslySetInnerHTML={{ __html: line.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900">$1</strong>') }}
-            />
-          </div>
-        )
-      }
-      if (/^\d+\.\s\*\*/.test(line)) {
-        return (
-          <p key={i} className="text-[.93rem] text-slate-600 leading-[1.82] mb-2"
-            dangerouslySetInnerHTML={{ __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900">$1</strong>') }}
-          />
-        )
-      }
-      return (
-        <p key={i} className="text-[.93rem] text-slate-600 leading-[1.82] mb-1"
-          dangerouslySetInnerHTML={{ __html: line.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-slate-900">$1</strong>') }}
-        />
+  const lines = content.trim().split('\n').map(l => l.trim())
+  const elements = []
+  let i = 0
+
+  while (i < lines.length) {
+    const line = lines[i]
+
+    // Empty line
+    if (!line) { elements.push(<div key={i} className="h-3" />); i++; continue }
+
+    // Image
+    const imgMatch = line.match(/^!\[(.*?)\]\((.*?)\)$/)
+    if (imgMatch) {
+      elements.push(
+        <div key={i} className="my-8 sm:my-12 rounded-lg sm:rounded-2xl overflow-hidden bg-gray-100">
+          <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto" />
+        </div>
       )
-    })
+      i++; continue
+    }
+
+    // Horizontal rule
+    if (line === '---') {
+      elements.push(<hr key={i} className="my-8 border-brand-border" />)
+      i++; continue
+    }
+
+    // H2
+    if (line.startsWith('## ')) {
+      elements.push(
+        <h2 key={i} className="font-serif text-[1.45rem] font-bold text-slate-900 mt-10 mb-4 leading-snug">
+          {line.slice(3)}
+        </h2>
+      )
+      i++; continue
+    }
+
+    // H3
+    if (line.startsWith('### ')) {
+      elements.push(
+        <h3 key={i} className="font-serif text-[1.1rem] font-bold text-slate-800 mt-7 mb-2 leading-snug">
+          {line.slice(4)}
+        </h3>
+      )
+      i++; continue
+    }
+
+    // Blockquote
+    if (line.startsWith('> ')) {
+      elements.push(
+        <blockquote key={i} className="my-6 border-l-4 border-accent pl-5 py-1 bg-brand-soft rounded-r-xl pr-4">
+          <p className="text-[.93rem] text-slate-600 leading-[1.82]"
+            dangerouslySetInnerHTML={{ __html: fmt(line.slice(2)) }} />
+        </blockquote>
+      )
+      i++; continue
+    }
+
+    // Table — collect consecutive rows starting with |
+    if (line.startsWith('|')) {
+      const rows = []
+      while (i < lines.length && lines[i].startsWith('|')) { rows.push(lines[i]); i++ }
+      const header = rows[0]
+      const body = rows.slice(1).filter(r => !isSeparatorRow(r))
+      const headers = header.split('|').slice(1, -1).map(c => c.trim())
+      elements.push(
+        <div key={`tbl-${i}`} className="my-6 overflow-x-auto rounded-xl border border-brand-border">
+          <table className="w-full text-[.85rem] border-collapse">
+            <thead>
+              <tr className="bg-brand-soft">
+                {headers.map((h, hi) => (
+                  <th key={hi} className="px-4 py-2.5 text-left text-[.73rem] font-semibold uppercase tracking-widest text-slate-500 border-b border-brand-border"
+                    dangerouslySetInnerHTML={{ __html: fmt(h) }} />
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {body.map((row, ri) => {
+                const cells = row.split('|').slice(1, -1).map(c => c.trim())
+                return (
+                  <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-brand-soft'}>
+                    {cells.map((cell, ci) => (
+                      <td key={ci} className="px-4 py-2.5 text-slate-600 border-b border-brand-border last:border-b-0"
+                        dangerouslySetInnerHTML={{ __html: fmt(cell) }} />
+                    ))}
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      )
+      continue
+    }
+
+    // Bullet list
+    if (line.startsWith('- ')) {
+      elements.push(
+        <div key={i} className="flex items-start gap-2.5 mb-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-[9px]" />
+          <span className="text-[.93rem] text-slate-600 leading-[1.82]"
+            dangerouslySetInnerHTML={{ __html: fmt(line.slice(2)) }} />
+        </div>
+      )
+      i++; continue
+    }
+
+    // Numbered list
+    if (/^\d+\.\s/.test(line)) {
+      elements.push(
+        <p key={i} className="text-[.93rem] text-slate-600 leading-[1.82] mb-2"
+          dangerouslySetInnerHTML={{ __html: fmt(line) }} />
+      )
+      i++; continue
+    }
+
+    // Default paragraph
+    elements.push(
+      <p key={i} className="text-[.93rem] text-slate-600 leading-[1.82] mb-1"
+        dangerouslySetInnerHTML={{ __html: fmt(line) }} />
+    )
+    i++
+  }
+
+  return elements
 }
 
 export default function BlogPostPage({ params }) {

@@ -1,5 +1,136 @@
 export const posts = [
-  
+
+  {
+    slug:     'education-cost-india',
+    title:    'The Real Cost of Your Child\'s Education — Nursery to Post-Graduation',
+    excerpt:  'Education inflation in India runs at 10–12% per year — nearly double the general rate. A ₹25 lakh MBA today will cost over ₹1 crore in 15 years. Here is what every parent needs to know and plan for.',
+    category: 'Child Education Planning',
+    date:     'May 28, 2026',
+    readTime: '6 min read',
+    featured: true,
+    image:    '/images/blog/education-cost.jpg',
+    color:    'from-teal-600 to-teal-900',
+    content: `
+Education inflation in India runs at 10–12% per year — nearly double the general rate. A ₹25 lakh MBA today will cost over ₹1 crore in 15 years. Here is what every parent needs to know and plan for.
+
+---
+
+**Key Numbers**
+
+| | |
+|---|---|
+| **Education Inflation** | 10–12% per year (vs 5–6% general CPI) |
+| **Costs Double Every** | 6–7 years at current rate |
+| **Nursery → PG (Today)** | ₹30–80 lakh (mid-tier urban India) |
+| **Same in 15 Years** | ₹1.2–3 crore (for today's newborn) |
+
+---
+
+Ask any Indian parent what keeps them up at night — after housing — and the answer is their child's education. From nursery admission fees to an MBA at IIM Ahmedabad (currently ₹27.5 lakh for two years), the cost of educating a child in India has become a multi-decade financial project. And unlike most other expenses, it inflates faster than your salary grows.
+
+While consumer inflation averages 3–5%, education costs rise at 10–12% annually. At that rate, a course costing ₹10 lakh today will cost roughly ₹40 lakh in 15 years. Most parents feel this instinctively every April when the fee circular arrives — but few have done the complete math across the full lifetime of their child's education.
+
+## Why Education Inflation Hits Harder
+
+Education operates in a market with no real price elasticity. Parents do not comparison-shop for schools the way they buy groceries. Switching costs are enormous, demand for quality institutions far exceeds supply, and private schools raise fees every year citing infrastructure, technology, and regulatory compliance. The result is a structurally higher inflation rate that shows no sign of slowing.
+
+**How Different Inflation Rates Compare:**
+
+| Category | Annual Inflation |
+|---|---|
+| General CPI | ~3–4% |
+| Food & Fuel | ~5–6% |
+| Healthcare | ~7–8% |
+| **Education** | **10–12%** |
+| Foreign Education | 12–15% |
+
+## The Lifetime Cost — Phase by Phase
+
+A child's education spans roughly 20 years and six distinct phases. Here is what each costs today in urban India, and what it will cost for a child born in 2026.
+
+### 🧒 Pre-School & Nursery
+**Ages 2–5 · 3 years**
+**Today:** ₹1.5–6 lakh → **In 15 yrs:** ₹4–16 lakh
+
+Metro playschools now charge ₹1–2 lakh per year. Premium pre-schools in Delhi and Mumbai charge ₹3–4 lakh per year. Add transport, uniforms, and activity fees.
+
+### 📚 Primary School (Class 1–5)
+**Ages 6–10 · 5 years**
+**Today:** ₹4–20 lakh → **In 15 yrs:** ₹10–55 lakh
+
+Mid-range private schools: ₹2–4 lakh per year. International schools: ₹6–10 lakh per year. Hidden extras — Olympiads, coding classes, sports coaching — add 25–30%.
+
+### 🏫 Secondary + Senior Secondary (Class 6–12)
+**Ages 11–17 · 7 years**
+**Today:** ₹7–35 lakh → **In 15 yrs:** ₹20 lakh–1 crore
+
+The longest and costliest school phase. JEE/NEET coaching alone costs ₹1.5–4 lakh per year. IB curriculum schools charge ₹12–15 lakh per year.
+
+### 🎓 UG Degree (B.Tech / MBBS / BA)
+**Ages 18–21 · 3–5 years**
+**Today:** ₹6–50 lakh → **In 15 yrs:** ₹25 lakh–2 crore
+
+IIT B.Tech: ₹8–13 lakh total. Private engineering: ₹12–25 lakh. Private MBBS: ₹50 lakh–1.2 crore. Add hostel and living expenses: ₹1.5–3 lakh per year extra.
+
+### 💼 PG Degree (MBA / M.Tech / MS)
+**Ages 22–24 · 1–2 years**
+**Today:** ₹4–28 lakh → **In 15 yrs:** ₹16 lakh–1.1 crore
+
+IIM Ahmedabad MBA: ₹27.5 lakh. IIM Bangalore: ₹26 lakh. IIM Calcutta: ₹27 lakh. Range across all IIMs: ₹17–27.5 lakh (2026–28 batch).
+
+---
+
+### The Complete Picture
+
+| | Cost Today (mid-tier) | For Today's Newborn |
+|---|---|---|
+| **Total (Nursery → PG)** | **₹30–80 lakh** | **₹1.2–3 crore** |
+
+*That's roughly a 4× increase at 10% education inflation over 15–18 years.*
+
+---
+
+> **The Hidden Costs:** The numbers above cover tuition — but coaching fees (₹1.5–4 lakh per year for JEE/NEET prep), hostel and mess charges (₹1.5–3 lakh per year), activity fees, transport, books, and "development charges" can add 25–40% to headline costs. Most parents plan only for college but forget the 12 years of school fees that come before it.
+
+## What Most Parents Get Wrong
+
+The biggest mistake is not failing to save — most Indian parents save diligently. The mistake is saving in the wrong instruments. An FD earning 6–7% against education inflation of 10–12% means you are losing 3–5% in real purchasing power every year. Over 15 years, this gap compounds into a shortfall of tens of lakhs.
+
+The second mistake is treating education as a single future lump sum. In reality, it is a continuous 20-year outflow. School fees start at age 3. Coaching fees hit at 15. College fees arrive at 18. PG costs land at 22. Each phase needs its own funding strategy.
+
+## How to Actually Plan for It
+
+**The Education Fund Playbook:**
+
+**1. Estimate the full cost** — not just college, but nursery-to-PG. Apply 10% inflation for the number of years until each milestone.
+
+**2. Start a dedicated SIP at birth** — equity mutual funds averaging 12–14% CAGR over 15+ years can beat education inflation. A ₹10,000/month SIP from birth grows to ~₹76 lakh by age 18.
+
+**3. Use a 10% annual step-up** — increasing your SIP by 10% each year boosts the final corpus by 50–60%. A ₹10,000 SIP with step-up reaches ~₹1.5 crore by age 18.
+
+**4. Match instrument to horizon** — equity for 10+ years away, hybrid for 3–5 years, liquid/debt for under 2 years.
+
+**5. Never dip into the college fund for school fees** — budget annual school fees from current income. The long-term fund is for the big-ticket college and PG phases.
+
+### SIP Illustration
+
+| Monthly SIP | Duration | Assumed Return | Corpus at Age 18 |
+|---|---|---|---|
+| ₹5,000 | 18 years | 12% | ₹37.9 lakh |
+| ₹10,000 | 18 years | 12% | ₹75.8 lakh |
+| ₹10,000 + 10% step-up | 18 years | 12% | ₹1.52 crore |
+| ₹20,000 + 10% step-up | 18 years | 12% | ₹3.04 crore |
+
+*Illustrative. Mutual fund returns are subject to market risk. Past performance does not guarantee future returns.*
+
+## The Bottom Line
+
+The math is unforgiving — but it also works in your favour if you start early. A ₹10,000 monthly SIP with a 10% annual step-up, started at birth, can build over ₹1.5 crore by age 18. That is enough for a premium undergraduate and postgraduate education in India. Delay the same by 8 years, and the corpus shrinks to under ₹40 lakh.
+
+> **Key Takeaway:** Education inflation at 10–12% is the fastest-rising cost for Indian families. FDs, endowment plans, and gold alone will not keep pace. Plan your child's education fund the way you would plan retirement — with long-term equity investing, started as early as possible, with a disciplined step-up strategy. Because whatever your child studies in 2040 will cost far more than you expect.
+    `,
+  },
+
   {
   slug:     'retirement-across-generations',
   title:    'The Changing Face of Retirement: What Each Generation Got — and What You Need',
@@ -7,7 +138,7 @@ export const posts = [
   category: 'Retirement Planning',
   date:     'May 2, 2026',
   readTime: '9 min read',
-  featured: true,
+  featured: false,
   image:    '/images/blog/retirement_generation.jpg',
   color:    'from-blue-700 to-indigo-900',
   content:  'custom',
