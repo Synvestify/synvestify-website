@@ -1,9 +1,26 @@
-'use client'
-
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { useState } from 'react'
+
+export const metadata = {
+  title: 'Your Money Calendar for FY 2026–27 | Synvestify',
+  description: 'Every deadline, every tax task, every financial action you need to take — month by month, for the full financial year. Advance tax dates, ITR filing, 80C limits, insurance reviews and more. Bookmark this.',
+  alternates: { canonical: 'https://www.synvestify.in/blog/money-calendar-2026-27' },
+  openGraph: {
+    title: 'Your Money Calendar for FY 2026–27',
+    description: 'Every deadline, every tax task, every financial action you need to take — month by month, for the full financial year. Advance tax dates, ITR filing, 80C limits, insurance reviews and more.',
+    url: 'https://www.synvestify.in/blog/money-calendar-2026-27',
+    siteName: 'Synvestify',
+    type: 'article',
+    images: [{ url: 'https://www.synvestify.in/images/blog/money-calendar.jpg', width: 1200, height: 630, alt: 'Money Calendar FY 2026-27' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your Money Calendar for FY 2026–27',
+    description: 'Every deadline, every tax task, every financial action you need to take — month by month, for the full financial year.',
+    images: ['https://www.synvestify.in/images/blog/money-calendar.jpg'],
+  },
+}
 export const dynamic = 'force-static'
 
 const months = [

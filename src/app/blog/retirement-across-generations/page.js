@@ -1,6 +1,24 @@
-'use client'
-
 import Link from 'next/link'
+
+export const metadata = {
+  title: 'The Changing Face of Retirement: What Each Generation Got — and What You Need | Synvestify',
+  description: 'Your grandfather retired at 55 with a pension and a joint family. You will retire at 62, alone, with no guaranteed pension, and live until 80. The retirement problem has changed completely — and so must the solution.',
+  alternates: { canonical: 'https://www.synvestify.in/blog/retirement-across-generations' },
+  openGraph: {
+    title: 'The Changing Face of Retirement: What Each Generation Got — and What You Need',
+    description: 'Your grandfather retired at 55 with a pension and a joint family. You will retire at 62, alone, with no guaranteed pension, and live until 80. The retirement problem has changed completely — and so must the solution.',
+    url: 'https://www.synvestify.in/blog/retirement-across-generations',
+    siteName: 'Synvestify',
+    type: 'article',
+    images: [{ url: 'https://www.synvestify.in/images/blog/retirement_generation.jpg', width: 1200, height: 630, alt: 'Retirement Across Generations' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Changing Face of Retirement: What Each Generation Got — and What You Need',
+    description: 'Your grandfather retired at 55 with a pension and a joint family. You will retire at 62, alone, with no guaranteed pension, and live until 80.',
+    images: ['https://www.synvestify.in/images/blog/retirement_generation.jpg'],
+  },
+}
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 

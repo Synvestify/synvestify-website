@@ -1,6 +1,24 @@
-'use client'
-
 import Link from 'next/link'
+
+export const metadata = {
+  title: 'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments | Synvestify',
+  description: 'Markets are swinging wildly as the US-Israel war with Iran enters its fourth week. Oil above $106. The Dow surging 1,000 points on peace rumours, then falling back. Here is what history tells us — and why volatility is not your enemy.',
+  alternates: { canonical: 'https://www.synvestify.in/blog/war-and-finance-iran-israel-2026' },
+  openGraph: {
+    title: 'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments',
+    description: 'Markets are swinging wildly as the US-Israel war with Iran enters its fourth week. Oil above $106. Here is what history tells us — and why volatility is not your enemy.',
+    url: 'https://www.synvestify.in/blog/war-and-finance-iran-israel-2026',
+    siteName: 'Synvestify',
+    type: 'article',
+    images: [{ url: 'https://www.synvestify.in/images/blog/war-and-finance.jpg', width: 1200, height: 630, alt: 'War and Finance - Iran Israel USA 2026' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments',
+    description: 'Markets are swinging wildly. Oil above $106. Here is what history tells us — and why volatility is not your enemy.',
+    images: ['https://www.synvestify.in/images/blog/war-and-finance.jpg'],
+  },
+}
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 export const dynamic = 'force-static'

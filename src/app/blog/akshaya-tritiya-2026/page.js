@@ -1,6 +1,24 @@
-'use client'
-
 import Link from 'next/link'
+
+export const metadata = {
+  title: 'Akshaya Tritiya 2026: The Right Way to Buy Gold This Year | Synvestify',
+  description: 'Gold is at ₹1.52 lakh per 10g — near record highs. The Iran war, a weak rupee, and global uncertainty are all in play. Here is what smart investors should actually do on Akshaya Tritiya this year.',
+  alternates: { canonical: 'https://www.synvestify.in/blog/akshaya-tritiya-2026' },
+  openGraph: {
+    title: 'Akshaya Tritiya 2026: The Right Way to Buy Gold This Year',
+    description: 'Gold is at ₹1.52 lakh per 10g — near record highs. The Iran war, a weak rupee, and global uncertainty are all in play. Here is what smart investors should actually do on Akshaya Tritiya this year.',
+    url: 'https://www.synvestify.in/blog/akshaya-tritiya-2026',
+    siteName: 'Synvestify',
+    type: 'article',
+    images: [{ url: 'https://www.synvestify.in/images/blog/akshaya-tritiya.jpg', width: 1200, height: 630, alt: 'Akshaya Tritiya 2026 Gold Investing' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Akshaya Tritiya 2026: The Right Way to Buy Gold This Year',
+    description: 'Gold is at ₹1.52 lakh per 10g — near record highs. Here is what smart investors should actually do on Akshaya Tritiya this year.',
+    images: ['https://www.synvestify.in/images/blog/akshaya-tritiya.jpg'],
+  },
+}
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
