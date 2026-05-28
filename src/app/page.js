@@ -13,8 +13,17 @@ import ScrollReveal   from '@/components/ScrollReveal'
 import TruxlInit      from '@/components/TruxlInit'
 
 export const metadata = {
-  title: 'Synvestify — Synchronizing Your Investments',
-  description: 'Expert mutual fund distribution, tax planning, insurance advisory, and retirement planning. Serving 100+ clients across India, USA, UK & Canada.',
+  title: 'Synvestify — Mutual Fund Distributor & Financial Advisor | India',
+  description: 'SEBI-registered mutual fund distributor offering retirement planning, tax planning, insurance advisory, and goal-based investing. Serving 100+ clients across India, USA, UK & Canada.',
+  keywords: 'mutual fund distributor India, retirement planning India, financial advisor Delhi, tax planning, SIP investment, FIRE planning, NPS, insurance advisory',
+  alternates: { canonical: 'https://www.synvestify.in' },
+  openGraph: {
+    title: 'Synvestify — Mutual Fund Distributor & Financial Advisor | India',
+    description: 'SEBI-registered mutual fund distributor. Expert retirement planning, tax planning, and goal-based investing across India, USA, UK & Canada.',
+    url: 'https://www.synvestify.in',
+    siteName: 'Synvestify',
+    type: 'website',
+  },
 }
 
 export default function HomePage() {

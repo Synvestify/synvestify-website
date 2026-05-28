@@ -261,6 +261,18 @@ const generations = [
 export default function RetirementGenerationsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'The Changing Face of Retirement: What Each Generation Got — and What You Need',
+        description: 'Your grandfather retired at 55 with a pension and a joint family. You will retire at 62, alone, with no guaranteed pension, and live until 80. The retirement problem has changed completely — and so must the solution.',
+        image: 'https://www.synvestify.in/images/blog/retirement_generation.jpg',
+        datePublished: '2026-05-02',
+        dateModified: '2026-05-28',
+        author: { '@type': 'Organization', name: 'Synvestify Research Desk', url: 'https://www.synvestify.in' },
+        publisher: { '@type': 'Organization', name: 'Synvestify', url: 'https://www.synvestify.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.synvestify.in/blog/retirement-across-generations' },
+      }) }} />
       <Navbar />
       <main>
 
@@ -516,6 +528,10 @@ export default function RetirementGenerationsPage() {
                 className="inline-block bg-accent text-white text-[.92rem] font-semibold px-7 py-3.5 rounded-xl hover:bg-[#1d4ed8] transition-colors">
                 Book Free Consultation →
               </Link>
+              <p className="text-[.78rem] text-white/45 mt-5">
+                Or learn more about our{' '}
+                <Link href="/retirement-planning" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Retirement Planning service →</Link>
+              </p>
             </div>
 
             <p className="text-[.72rem] text-slate-400 leading-relaxed mt-8 pt-6 border-t border-brand-border">

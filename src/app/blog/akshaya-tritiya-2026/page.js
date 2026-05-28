@@ -175,6 +175,18 @@ function ReturnsComparison() {
 export default function AkshayaTritiyaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'Akshaya Tritiya 2026: The Right Way to Buy Gold This Year',
+        description: 'Gold is at ₹1.52 lakh per 10g — near record highs. The Iran war, a weak rupee, and global uncertainty are all in play. Here is what smart investors should actually do on Akshaya Tritiya this year.',
+        image: 'https://www.synvestify.in/images/blog/akshaya-tritiya.jpg',
+        datePublished: '2026-04-18',
+        dateModified: '2026-05-28',
+        author: { '@type': 'Organization', name: 'Synvestify Research Desk', url: 'https://www.synvestify.in' },
+        publisher: { '@type': 'Organization', name: 'Synvestify', url: 'https://www.synvestify.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.synvestify.in/blog/akshaya-tritiya-2026' },
+      }) }} />
       <Navbar />
       <main>
 
@@ -417,6 +429,12 @@ export default function AkshayaTritiyaPage() {
                 className="inline-block bg-accent text-white text-[.92rem] font-semibold px-7 py-3.5 rounded-xl hover:bg-[#1d4ed8] transition-colors">
                 Book Free Consultation →
               </Link>
+              <p className="text-[.78rem] text-white/45 mt-5">
+                Explore our services:{' '}
+                <Link href="/goal-based-planning" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Goal-Based Planning</Link>
+                {' '}·{' '}
+                <Link href="/risk-profiling" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Risk Profiling</Link>
+              </p>
             </div>
 
             <p className="text-[.72rem] text-slate-400 leading-relaxed mt-8 pt-6 border-t border-brand-border">

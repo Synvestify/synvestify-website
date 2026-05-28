@@ -230,6 +230,18 @@ function MonthCard({ month, year, color, bg, border, emoji, highlight, tasks }) 
 export default function MoneyCalendarPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'Your Money Calendar for FY 2026–27',
+        description: 'Every deadline, every tax task, every financial action you need to take — month by month, for the full financial year. Advance tax dates, ITR filing, 80C limits, insurance reviews and more.',
+        image: 'https://www.synvestify.in/images/blog/money-calendar.jpg',
+        datePublished: '2026-04-10',
+        dateModified: '2026-05-28',
+        author: { '@type': 'Organization', name: 'Synvestify Research Desk', url: 'https://www.synvestify.in' },
+        publisher: { '@type': 'Organization', name: 'Synvestify', url: 'https://www.synvestify.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.synvestify.in/blog/money-calendar-2026-27' },
+      }) }} />
       <Navbar />
       <main>
 
@@ -432,6 +444,10 @@ export default function MoneyCalendarPage() {
                 className="inline-block bg-accent text-white text-[.92rem] font-semibold px-7 py-3.5 rounded-xl hover:bg-[#1d4ed8] transition-colors">
                 Book Free Consultation →
               </Link>
+              <p className="text-[.78rem] text-white/45 mt-5">
+                Or explore our{' '}
+                <Link href="/tax-planning" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Tax Planning service →</Link>
+              </p>
             </div>
 
             <p className="text-[.72rem] text-slate-400 leading-relaxed mt-8 pt-6 border-t border-brand-border">

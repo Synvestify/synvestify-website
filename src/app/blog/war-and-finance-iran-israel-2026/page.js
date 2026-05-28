@@ -236,6 +236,18 @@ function SH({ children }) {
 export default function WarFinancePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'War & Finance: What the Iran-Israel-USA Conflict Means for Your Investments',
+        description: 'Markets are swinging wildly as the US-Israel war with Iran enters its fourth week. Oil above $106. Here is what history tells us — and why volatility is not your enemy.',
+        image: 'https://www.synvestify.in/images/blog/war-and-finance.jpg',
+        datePublished: '2026-03-26',
+        dateModified: '2026-05-28',
+        author: { '@type': 'Organization', name: 'Synvestify Research Desk', url: 'https://www.synvestify.in' },
+        publisher: { '@type': 'Organization', name: 'Synvestify', url: 'https://www.synvestify.in' },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.synvestify.in/blog/war-and-finance-iran-israel-2026' },
+      }) }} />
       <Navbar />
       <main>
 
@@ -575,6 +587,12 @@ export default function WarFinancePage() {
                 className="inline-block bg-accent text-white text-[.92rem] font-semibold px-7 py-3.5 rounded-xl hover:bg-[#1d4ed8] transition-colors">
                 Book Free Consultation →
               </Link>
+              <p className="text-[.78rem] text-white/45 mt-5">
+                Explore our services:{' '}
+                <Link href="/risk-profiling" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Risk Profiling</Link>
+                {' '}·{' '}
+                <Link href="/goal-based-planning" className="text-white/70 hover:text-white underline underline-offset-2 transition-colors">Goal-Based Planning</Link>
+              </p>
             </div>
 
             {/* Disclaimer */}

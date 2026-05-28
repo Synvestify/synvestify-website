@@ -6,8 +6,17 @@ import RetirementCalculator    from '@/components/retirement/RetirementCalculato
 import ThreeBucketStrategy     from '@/components/retirement/ThreeBucketStrategy'
 
 export const metadata = {
-  title: 'Retirement Planning — Synvestify',
-  description: 'Calculate your retirement corpus, discover your FIRE number, and learn the 3 Bucket Strategy for a stress-free retirement.',
+  title: 'Retirement Planning in India — Calculate Your FIRE Number | Synvestify',
+  description: 'Plan your retirement with expert advisors. Use our free retirement calculator to find your FIRE number, learn the 3 Bucket Strategy, and build a corpus that lasts a lifetime. Serving clients across India, USA & UK.',
+  keywords: 'retirement planning India, retirement calculator, FIRE number India, 3 bucket strategy, NPS retirement, EPF retirement, retirement corpus India, mutual fund retirement plan',
+  alternates: { canonical: 'https://www.synvestify.in/retirement-planning' },
+  openGraph: {
+    title: 'Retirement Planning in India — Calculate Your FIRE Number | Synvestify',
+    description: 'Use our free retirement calculator to find your FIRE number and build a corpus that lasts a lifetime.',
+    url: 'https://www.synvestify.in/retirement-planning',
+    siteName: 'Synvestify',
+    type: 'website',
+  },
 }
 
 const phases = [
@@ -190,6 +199,38 @@ export default function RetirementPlanningPage() {
 
       </main>
       <Footer />
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How much corpus do I need to retire comfortably in India?',
+            acceptedAnswer: { '@type': 'Answer', text: 'For a comfortable middle-class retirement in urban India, you typically need ₹3–7 crore, depending on your lifestyle, city, and retirement age. Use our free retirement calculator on this page for a personalised estimate.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'When should I start retirement planning in India?',
+            acceptedAnswer: { '@type': 'Answer', text: 'The best time is as early as possible. Starting at 25 instead of 35 can reduce your required monthly SIP by up to 3x for the same corpus target. A ₹4,000/month SIP at age 25 achieves the same ₹5 crore as ₹13,000/month starting at 35.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is the 3 Bucket Strategy for retirement?',
+            acceptedAnswer: { '@type': 'Answer', text: 'The 3 Bucket Strategy divides your corpus into: Bucket 1 (1–2 years of expenses in liquid funds for immediate needs), Bucket 2 (3–7 years in debt/hybrid funds), and Bucket 3 (8+ years in equity for long-term growth). This ensures you always have cash when needed while keeping most of your corpus growing.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'What is a FIRE number and how do I calculate it?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Your FIRE number is the total corpus needed to retire and live off returns indefinitely. It is calculated as Annual Expenses × 25 (the 4% withdrawal rule). For example, spending ₹12 lakh per year means your FIRE number is ₹3 crore. Use our retirement calculator for a personalised projection.' },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is NPS better than EPF for retirement in India?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Both serve different purposes. EPF offers approximately 8% guaranteed returns and is mandatory for salaried employees. NPS is market-linked with potentially higher returns and offers an additional ₹50,000 tax deduction under Section 80CCD(1B). Ideally, use both — EPF as your stable foundation and NPS for growth.' },
+          },
+        ],
+      }) }} />
     </>
   )
 }
