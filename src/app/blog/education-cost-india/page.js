@@ -332,7 +332,7 @@ export default function EducationCostPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
-                { icon: '❌', title: 'FDs for the education fund', desc: 'An FD earning 6–7% against 10–12% education inflation means you lose 3–5% in real purchasing power every year. Over 15 years, this compounds into a shortfall of tens of lakhs.' },
+                { icon: '❌', title: 'FDs/LIC/Children Plans for the education fund', desc: 'An FD/LIC/Children plan earning 6–7% against 10–12% education inflation means you lose 3–5% in real purchasing power every year. Over 15 years, this compounds into a shortfall of tens of lakhs.' },
                 { icon: '❌', title: 'Planning for a single lump sum', desc: 'Education is a continuous 20-year outflow. School fees start at age 3. Coaching at 15. College at 18. PG at 22. Each phase needs its own funding strategy.' },
                 { icon: '❌', title: 'Starting the SIP too late', desc: 'Delaying by 8 years (starting at 8 instead of birth) cuts the age-18 corpus from ₹1.52 crore to under ₹40 lakh — for the exact same monthly SIP amount.' },
                 { icon: '❌', title: 'Ignoring JEE/NEET coaching costs', desc: 'Coaching alone runs ₹1.5–4 lakh per year for 2–3 years. Most education planning calculators don\'t include it. It can add ₹5–12 lakh to the total bill.' },
