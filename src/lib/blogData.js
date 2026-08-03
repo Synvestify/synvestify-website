@@ -1,13 +1,26 @@
 export const posts = [
 
   {
+    slug:     'job-security-ai-era',
+    title:    'Job Security Isn\'t What It Used to Be: A Financial Safety Net Plan for the AI Era',
+    excerpt:  'Nearly 80,000 tech workers lost their jobs in Q1 2026 alone. India ranks second globally in AI-related layoffs. Here is how to build a 5-layer financial safety net that holds — even when your job doesn\'t.',
+    category: 'Financial Planning',
+    date:     'Aug 3, 2026',
+    readTime: '7 min read',
+    featured: true,
+    image:    '/images/blog/job_security_ai.png',
+    color:    'from-red-700 to-gray-900',
+    content:  'custom',
+  },
+
+  {
     slug:     'education-cost-india',
     title:    'The Real Cost of Your Child\'s Education — Nursery to Post-Graduation',
     excerpt:  'Education inflation in India runs at 10–12% per year — nearly double the general rate. A ₹25 lakh MBA today will cost over ₹1 crore in 15 years. Here is what every parent needs to know and plan for.',
     category: 'Child Education Planning',
     date:     'May 28, 2026',
     readTime: '6 min read',
-    featured: true,
+    featured: false,
     image:    '/images/blog/education-cost.jpg',
     color:    'from-teal-600 to-teal-900',
     content:  'custom',
