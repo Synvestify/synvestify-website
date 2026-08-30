@@ -1,13 +1,26 @@
 export const posts = [
 
   {
+    slug:     'mutual-fund-myths-realities',
+    title:    '13 Things Everyone "Knows" About Mutual Funds — And Why Most Are Wrong',
+    excerpt:  'India invests ₹31,000 crore every month through SIPs. Yet most investors still believe myths that cost them real money. Here are 13 widely held "facts" that don\'t survive contact with actual data.',
+    category: 'Mutual Funds',
+    date:     'Aug 17, 2026',
+    readTime: '8 min read',
+    featured: true,
+    image:    '/images/blog/myths.jpg',
+    color:    'from-violet-700 to-purple-950',
+    content:  'custom',
+  },
+
+  {
     slug:     'job-security-ai-era',
     title:    'Job Security Isn\'t What It Used to Be: A Financial Safety Net Plan for the AI Era',
     excerpt:  'Nearly 80,000 tech workers lost their jobs in Q1 2026 alone. India ranks second globally in AI-related layoffs. Here is how to build a 5-layer financial safety net that holds — even when your job doesn\'t.',
     category: 'Financial Planning',
     date:     'Aug 3, 2026',
     readTime: '7 min read',
-    featured: true,
+    featured: false,
     image:    '/images/blog/job_security_ai.png',
     color:    'from-red-700 to-gray-900',
     content:  'custom',
